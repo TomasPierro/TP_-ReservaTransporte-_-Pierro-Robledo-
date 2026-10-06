@@ -15,3 +15,10 @@ también modificara pagos, clientes y choferes
 
 
 [Diagrama](https://lucid.app/lucidchart/088fcd7d-5bde-48a9-9ca5-a4ec8cb6bf7f/edit?viewport_loc=-10115%2C-3061%2C2558%2C1298%2C0_0&invitationId=inv_0585586d-f898-4da6-88ff-b67ec5e594c2)
+
+
+
+
+el usuario ingresa datos desde la capa de presentación desarrollada en Windows forms, esta capa envia inforamacion a la capa de negocio para validar que exista clientes y que el vehiculo este disponible.
+
+la capa de negocio se comunica con la capa de datos, utiliza EntityFramework y el repositorio para agregar la reserva a la base de datos y mediante el DBcontext y savechanges se guarda el registro en la base de datos 
