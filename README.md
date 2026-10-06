@@ -19,6 +19,6 @@ también modificara pagos, clientes y choferes
 
 
 
-el usuario ingresa datos desde la capa de presentación desarrollada en Windows forms, esta capa envia inforamacion a la capa de negocio para validar que exista clientes y que el vehiculo este disponible.
+el usuario ingresa datos desde la capa de presentación desarrollada en Windows forms, esta capa envia informacion a la capa de negocio para validar que exista clientes y que el vehiculo este disponible.
 
 la capa de negocio se comunica con la capa de datos, utiliza EntityFramework y el repositorio para agregar la reserva a la base de datos y mediante el DBcontext y savechanges se guarda el registro en la base de datos 
