@@ -1,0 +1,15 @@
+C:\Users\tomas\source\repos\ClasesReservaTransporte\ClasesReservaTransporte\bin\Debug\net10.0\ClasesReservaTransporte.deps.json
+C:\Users\tomas\source\repos\ClasesReservaTransporte\ClasesReservaTransporte\bin\Debug\net10.0\ClasesReservaTransporte.dll
+C:\Users\tomas\source\repos\ClasesReservaTransporte\ClasesReservaTransporte\bin\Debug\net10.0\ClasesReservaTransporte.pdb
+C:\Users\tomas\source\repos\ClasesReservaTransporte\ClasesReservaTransporte\obj\Debug\net10.0\ClasesReservaTransporte.csproj.AssemblyReference.cache
+C:\Users\tomas\source\repos\ClasesReservaTransporte\ClasesReservaTransporte\obj\Debug\net10.0\ClasesReservaTransporte.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tomas\source\repos\ClasesReservaTransporte\ClasesReservaTransporte\obj\Debug\net10.0\ClasesReservaTransporte.AssemblyInfoInputs.cache
+C:\Users\tomas\source\repos\ClasesReservaTransporte\ClasesReservaTransporte\obj\Debug\net10.0\ClasesReservaTransporte.AssemblyInfo.cs
+C:\Users\tomas\source\repos\ClasesReservaTransporte\ClasesReservaTransporte\obj\Debug\net10.0\ClasesReservaTransporte.csproj.CoreCompileInputs.cache
+C:\Users\tomas\source\repos\ClasesReservaTransporte\ClasesReservaTransporte\obj\Debug\net10.0\ClasesReservaTransporte.dll
+C:\Users\tomas\source\repos\ClasesReservaTransporte\ClasesReservaTransporte\obj\Debug\net10.0\refint\ClasesReservaTransporte.dll
+C:\Users\tomas\source\repos\ClasesReservaTransporte\ClasesReservaTransporte\obj\Debug\net10.0\ClasesReservaTransporte.pdb
+C:\Users\tomas\source\repos\ClasesReservaTransporte\ClasesReservaTransporte\obj\Debug\net10.0\ref\ClasesReservaTransporte.dll
+C:\Users\tomas\source\repos\ClasesReservaTransporte\ClasesReservaTransporte\obj\Debug\net10.0\ClasesRe.1E03A6BA.Up2Date
+C:\Users\tomas\source\repos\ClasesReservaTransporte\ClasesReservaTransporte\bin\Debug\net10.0\ClasesReservaTransporte.runtimeconfig.json
+C:\Users\tomas\source\repos\ClasesReservaTransporte\ClasesReservaTransporte\obj\Debug\net10.0\ClasesReservaTransporte.genruntimeconfig.cache

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ClasesReservaTransporte/ClasesReservaTransporte.csproj" />
+  <Project Path="Interfaz/Interfaz.csproj" />
+</Solution>
