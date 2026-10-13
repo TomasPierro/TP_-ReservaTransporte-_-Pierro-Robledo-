@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sy4z2gonPuI=",
+  "dgSpecHash": "NVJLViI86jo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\tomas\\source\\repos\\ClasesReservaTransporte\\Interfaz\\Interfaz.csproj",
+  "projectFilePath": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Interfaz.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tomas\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\tomas\\.nuget\\packages\\microsoft.build.framework\\18.0.2\\microsoft.build.framework.18.0.2.nupkg.sha512",

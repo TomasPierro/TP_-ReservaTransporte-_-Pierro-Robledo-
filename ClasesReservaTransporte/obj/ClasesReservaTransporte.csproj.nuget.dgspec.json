@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tomas\\source\\repos\\ClasesReservaTransporte\\ClasesReservaTransporte\\ClasesReservaTransporte.csproj": {}
+    "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\ClasesReservaTransporte\\ClasesReservaTransporte.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tomas\\source\\repos\\ClasesReservaTransporte\\ClasesReservaTransporte\\ClasesReservaTransporte.csproj": {
+    "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\ClasesReservaTransporte\\ClasesReservaTransporte.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tomas\\source\\repos\\ClasesReservaTransporte\\ClasesReservaTransporte\\ClasesReservaTransporte.csproj",
+        "projectUniqueName": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\ClasesReservaTransporte\\ClasesReservaTransporte.csproj",
         "projectName": "ClasesReservaTransporte",
-        "projectPath": "C:\\Users\\tomas\\source\\repos\\ClasesReservaTransporte\\ClasesReservaTransporte\\ClasesReservaTransporte.csproj",
+        "projectPath": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\ClasesReservaTransporte\\ClasesReservaTransporte.csproj",
         "packagesPath": "C:\\Users\\tomas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tomas\\source\\repos\\ClasesReservaTransporte\\ClasesReservaTransporte\\obj\\",
+        "outputPath": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\ClasesReservaTransporte\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

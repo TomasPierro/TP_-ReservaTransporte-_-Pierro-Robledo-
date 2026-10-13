@@ -2930,11 +2930,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tomas\\source\\repos\\ClasesReservaTransporte\\Interfaz\\Interfaz.csproj",
+      "projectUniqueName": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Interfaz.csproj",
       "projectName": "Interfaz",
-      "projectPath": "C:\\Users\\tomas\\source\\repos\\ClasesReservaTransporte\\Interfaz\\Interfaz.csproj",
+      "projectPath": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Interfaz.csproj",
       "packagesPath": "C:\\Users\\tomas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tomas\\source\\repos\\ClasesReservaTransporte\\Interfaz\\obj\\",
+      "outputPath": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2956,8 +2956,8 @@
           "framework": "net10.0-windows7.0",
           "targetAlias": "net10.0-windows",
           "projectReferences": {
-            "C:\\Users\\tomas\\source\\repos\\ClasesReservaTransporte\\ClasesReservaTransporte\\ClasesReservaTransporte.csproj": {
-              "projectPath": "C:\\Users\\tomas\\source\\repos\\ClasesReservaTransporte\\ClasesReservaTransporte\\ClasesReservaTransporte.csproj"
+            "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\ClasesReservaTransporte\\ClasesReservaTransporte.csproj": {
+              "projectPath": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\ClasesReservaTransporte\\ClasesReservaTransporte.csproj"
             }
           }
         }
