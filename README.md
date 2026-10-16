@@ -7,9 +7,9 @@ las entidades principales que tendrá son (clientes, chofer, tipoVehiculo, vehic
 
 los objetivos serán que pueda registrar clientes, reservas, choferes y vehículos además de los pagos
 
-El programa deberá reportar de pagos el método en el que se pagara, el estado del pago y el monto final 
+El programa deberá reportar pagos el método en el que se pagara, el estado del pago y el monto final 
 
-de vehículos reportara el modelo, la patente y marca del vehículo y además el coste por días 
+de los vehículos reportara el modelo, la patente y marca del vehículo y además el coste por días 
 
 la entidad cliente va a reportar  los datos personales de la persona, el numero de teléfono y su licencia 
 
