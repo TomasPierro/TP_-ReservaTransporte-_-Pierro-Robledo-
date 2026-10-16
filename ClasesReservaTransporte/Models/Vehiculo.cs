@@ -10,7 +10,7 @@ namespace ClasesReservaTransporte.Models
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public string Patente { get; set; }
-        public int CosteXdia { get; set; }
+        public double CosteXdia { get; set; }
         public int TipoVehiculoId { get; set; }
     }
 }

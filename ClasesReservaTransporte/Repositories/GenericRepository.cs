@@ -39,5 +39,10 @@ namespace ClasesReservaTransporte.Repositories
                            .AsNoTracking()
                            .ToList();
         }
+        public void Eliminar(T entidad)
+        {
+            _context.Set<T>().Remove(entidad);
+            _context.SaveChanges();
+        }
     }
 }

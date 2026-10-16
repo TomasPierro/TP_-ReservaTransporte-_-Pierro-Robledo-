@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ClasesReservaTransporte")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1dfb71948463953345799736b15ee9abf993df62")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c1b7fd7d675d4717f01f1f924ed9de64bc2e87d")]
 [assembly: System.Reflection.AssemblyProductAttribute("ClasesReservaTransporte")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ClasesReservaTransporte")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

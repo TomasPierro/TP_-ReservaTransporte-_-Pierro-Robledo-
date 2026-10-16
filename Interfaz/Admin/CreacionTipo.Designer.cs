@@ -1,6 +1,6 @@
-﻿namespace Interfaz.ABM_Vehiculo
+﻿namespace Interfaz.Admin
 {
-    partial class AltaVehiculo
+    partial class CreacionTipo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,43 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button4 = new Button();
+            button1 = new Button();
             label1 = new Label();
+            textBox1 = new TextBox();
             SuspendLayout();
             // 
-            // button4
+            // button1
             // 
-            button4.Location = new Point(345, 311);
-            button4.Name = "button4";
-            button4.Size = new Size(94, 29);
-            button4.TabIndex = 3;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
+            button1.Location = new Point(335, 206);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 0;
+            button1.Text = "Guardar";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(195, 81);
+            label1.Location = new Point(160, 140);
             label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 4;
-            label1.Text = "label1";
+            label1.Size = new Size(150, 20);
+            label1.TabIndex = 1;
+            label1.Text = "Ingrese Nombre Tipo";
             // 
-            // AltaVehiculo
+            // textBox1
+            // 
+            textBox1.Location = new Point(335, 140);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(157, 27);
+            textBox1.TabIndex = 2;
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
+            // CreacionTipo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(textBox1);
             Controls.Add(label1);
-            Controls.Add(button4);
-            Name = "AltaVehiculo";
-            Text = "AltaVehiculo";
+            Controls.Add(button1);
+            Name = "CreacionTipo";
+            Text = "CreacionTipo";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Button button4;
+
+        private Button button1;
         private Label label1;
+        private TextBox textBox1;
     }
 }
