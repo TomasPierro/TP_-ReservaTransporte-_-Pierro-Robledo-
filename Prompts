@@ -1,0 +1,26 @@
+estoy teniendo estos errores cuando inicio mi proyecto de windows forms nose porwque me sigue inciando con el menu viejo que ya borre en vez de con el nuevo
+Cerrá completamente el programa anterior
+Como antes te apareció el proceso Interfaz (14324):
+
+1.Cerrá Visual Studio.
+
+2.Abrí el Administrador de tareas con Ctrl + Shift + Esc.
+
+3.Buscá Interfaz.exe y finalizá la tarea si sigue ejecutándose.
+
+4.Volvé a abrir Visual Studio.
+
+
+como puedo hacer para que en un int pueda agregar mas numeros porque ingreso por ejemplo un numero de telefono como int y me tirar error
+¿Por qué te da error?
+En C#, un int puede almacenar valores entre -2.147.483.648 y 2.147.483.647.
+
+Por ejemplo:
+
+
+csharp
+int telefono = 3492123456; // Error: supera el límite de int
+Aunque uses long, que admite números más grandes, para teléfonos no es la mejor opción.
+
+La solución: usar string
+Guardá el teléfono como texto:
