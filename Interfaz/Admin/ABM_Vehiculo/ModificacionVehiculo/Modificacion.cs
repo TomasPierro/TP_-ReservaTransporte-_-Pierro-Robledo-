@@ -1,12 +1,5 @@
-﻿using ClasesReservaTransporte.Repositories;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using ClasesReservaTransporte.Models;
+﻿using ClasesReservaTransporte.Models;
+using ClasesReservaTransporte.Repositories;
 using Interfaz.Admin;
 
 namespace Interfaz.ABM_Vehiculo.ModificacionVehiculo
@@ -81,7 +74,7 @@ namespace Interfaz.ABM_Vehiculo.ModificacionVehiculo
                     textBox3.Text = vehiculo.Modelo;
                     textBox4.Text = vehiculo.Patente;
                     textBox5.Text = vehiculo.CosteXdia.ToString();
-                  
+
                     return;
                 }
             }
@@ -89,7 +82,7 @@ namespace Interfaz.ABM_Vehiculo.ModificacionVehiculo
             MessageBox.Show("Vehículo no encontrado");
 
 
-        } 
+        }
 
         private void button4_Click(object sender, EventArgs e)
         {

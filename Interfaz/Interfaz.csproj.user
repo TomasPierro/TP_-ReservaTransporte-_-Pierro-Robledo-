@@ -16,7 +16,13 @@
     <Compile Update="Admin\MenuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Menu.cs">
+    <Compile Update="Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Cliente\MenuCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Cliente\ABMCliente\RegistroUsu.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

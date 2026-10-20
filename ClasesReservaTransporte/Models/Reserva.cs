@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ClasesReservaTransporte.Models
+﻿namespace ClasesReservaTransporte.Models
 {
     public class Reserva
     {

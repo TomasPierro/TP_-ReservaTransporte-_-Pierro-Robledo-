@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using ClasesReservaTransporte.Models;
+﻿using ClasesReservaTransporte.Models;
+using Microsoft.EntityFrameworkCore;
 namespace ClasesReservaTransporte.Data
 {
     public class AplicationDbContext : DbContext

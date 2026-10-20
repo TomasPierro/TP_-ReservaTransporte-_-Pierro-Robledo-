@@ -1,13 +1,6 @@
 ﻿using Interfaz.ABM_Vehiculo;
 using Interfaz.ABM_Vehiculo.BajaVehiculo;
 using Interfaz.ABM_Vehiculo.ModificacionVehiculo;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 
 namespace Interfaz.Admin
 {

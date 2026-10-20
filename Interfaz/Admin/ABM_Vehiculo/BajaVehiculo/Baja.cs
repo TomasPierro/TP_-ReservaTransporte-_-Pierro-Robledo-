@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics.Eventing.Reader;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using ClasesReservaTransporte.Models;
+﻿using ClasesReservaTransporte.Models;
 using ClasesReservaTransporte.Repositories;
 using Interfaz.Admin;
 
