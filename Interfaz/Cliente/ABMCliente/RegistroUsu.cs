@@ -63,7 +63,7 @@ namespace Interfaz
             string Nombre = textBox2.Text;
             string Apellido = textBox3.Text;
             int Dni = int.Parse(textBox4.Text);
-            int Telefono = int.Parse(textBox5.Text);
+            string Telefono = textBox5.Text;
             int Nro_Licencia = int.Parse(textBox6.Text);
             string Contraseña = textBox7.Text;
             string Confirmar_Contraseña = textBox8.Text;

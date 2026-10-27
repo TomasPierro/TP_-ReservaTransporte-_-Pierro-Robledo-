@@ -3,24 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9A664E2C-4D6E-2457-42F7-ED77E9C71BC9}|Interfaz\\Interfaz.csproj|c:\\users\\tomas\\onedrive\\documentos\\github\\tp_-reservatransporte-_-pierro-robledo-\\interfaz\\cliente\\menucliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9A664E2C-4D6E-2457-42F7-ED77E9C71BC9}|Interfaz\\Interfaz.csproj|solutionrelative:interfaz\\cliente\\menucliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A664E2C-4D6E-2457-42F7-ED77E9C71BC9}|Interfaz\\Interfaz.csproj|c:\\users\\tomas\\onedrive\\documentos\\github\\tp_-reservatransporte-_-pierro-robledo-\\interfaz\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9A664E2C-4D6E-2457-42F7-ED77E9C71BC9}|Interfaz\\Interfaz.csproj|solutionrelative:interfaz\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A664E2C-4D6E-2457-42F7-ED77E9C71BC9}|Interfaz\\Interfaz.csproj|C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\interfaz\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9A664E2C-4D6E-2457-42F7-ED77E9C71BC9}|Interfaz\\Interfaz.csproj|solutionrelative:interfaz\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{70E71F18-6014-875B-DE59-EEFEE75425F7}|ClasesReservaTransporte\\ClasesReservaTransporte.csproj|c:\\users\\tomas\\onedrive\\documentos\\github\\tp_-reservatransporte-_-pierro-robledo-\\clasesreservatransporte\\data\\aplicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70E71F18-6014-875B-DE59-EEFEE75425F7}|ClasesReservaTransporte\\ClasesReservaTransporte.csproj|solutionrelative:clasesreservatransporte\\data\\aplicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9A664E2C-4D6E-2457-42F7-ED77E9C71BC9}|Interfaz\\Interfaz.csproj|c:\\users\\tomas\\onedrive\\documentos\\github\\tp_-reservatransporte-_-pierro-robledo-\\interfaz\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9A664E2C-4D6E-2457-42F7-ED77E9C71BC9}|Interfaz\\Interfaz.csproj|solutionrelative:interfaz\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{70E71F18-6014-875B-DE59-EEFEE75425F7}|ClasesReservaTransporte\\ClasesReservaTransporte.csproj|c:\\users\\tomas\\onedrive\\documentos\\github\\tp_-reservatransporte-_-pierro-robledo-\\clasesreservatransporte\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70E71F18-6014-875B-DE59-EEFEE75425F7}|ClasesReservaTransporte\\ClasesReservaTransporte.csproj|solutionrelative:clasesreservatransporte\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A664E2C-4D6E-2457-42F7-ED77E9C71BC9}|Interfaz\\Interfaz.csproj|c:\\users\\tomas\\onedrive\\documentos\\github\\tp_-reservatransporte-_-pierro-robledo-\\interfaz\\cliente\\abmcliente\\registrousu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A664E2C-4D6E-2457-42F7-ED77E9C71BC9}|Interfaz\\Interfaz.csproj|solutionrelative:interfaz\\cliente\\abmcliente\\registrousu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A664E2C-4D6E-2457-42F7-ED77E9C71BC9}|Interfaz\\Interfaz.csproj|c:\\users\\tomas\\onedrive\\documentos\\github\\tp_-reservatransporte-_-pierro-robledo-\\interfaz\\admin\\abm_vehiculo\\altavehiculo\\altavehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A664E2C-4D6E-2457-42F7-ED77E9C71BC9}|Interfaz\\Interfaz.csproj|solutionrelative:interfaz\\admin\\abm_vehiculo\\altavehiculo\\altavehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A664E2C-4D6E-2457-42F7-ED77E9C71BC9}|Interfaz\\Interfaz.csproj|c:\\users\\tomas\\onedrive\\documentos\\github\\tp_-reservatransporte-_-pierro-robledo-\\interfaz\\admin\\abm_vehiculo\\altavehiculo\\altavehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9A664E2C-4D6E-2457-42F7-ED77E9C71BC9}|Interfaz\\Interfaz.csproj|solutionrelative:interfaz\\admin\\abm_vehiculo\\altavehiculo\\altavehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9A664E2C-4D6E-2457-42F7-ED77E9C71BC9}|Interfaz\\Interfaz.csproj|C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\interfaz\\cliente\\abmcliente\\registrousu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9A664E2C-4D6E-2457-42F7-ED77E9C71BC9}|Interfaz\\Interfaz.csproj|solutionrelative:interfaz\\cliente\\abmcliente\\registrousu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A664E2C-4D6E-2457-42F7-ED77E9C71BC9}|Interfaz\\Interfaz.csproj|C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\interfaz\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9A664E2C-4D6E-2457-42F7-ED77E9C71BC9}|Interfaz\\Interfaz.csproj|solutionrelative:interfaz\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A664E2C-4D6E-2457-42F7-ED77E9C71BC9}|Interfaz\\Interfaz.csproj|c:\\users\\tomas\\onedrive\\documentos\\github\\tp_-reservatransporte-_-pierro-robledo-\\interfaz\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A664E2C-4D6E-2457-42F7-ED77E9C71BC9}|Interfaz\\Interfaz.csproj|solutionrelative:interfaz\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70E71F18-6014-875B-DE59-EEFEE75425F7}|ClasesReservaTransporte\\ClasesReservaTransporte.csproj|c:\\users\\tomas\\onedrive\\documentos\\github\\tp_-reservatransporte-_-pierro-robledo-\\clasesreservatransporte\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70E71F18-6014-875B-DE59-EEFEE75425F7}|ClasesReservaTransporte\\ClasesReservaTransporte.csproj|solutionrelative:clasesreservatransporte\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A664E2C-4D6E-2457-42F7-ED77E9C71BC9}|Interfaz\\Interfaz.csproj|c:\\users\\tomas\\onedrive\\documentos\\github\\tp_-reservatransporte-_-pierro-robledo-\\interfaz\\cliente\\menucliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9A664E2C-4D6E-2457-42F7-ED77E9C71BC9}|Interfaz\\Interfaz.csproj|solutionrelative:interfaz\\cliente\\menucliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9A664E2C-4D6E-2457-42F7-ED77E9C71BC9}|Interfaz\\Interfaz.csproj|C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\interfaz\\admin\\menuadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -42,11 +66,75 @@
       "DocumentGroups": [
         {
           "DockedWidth": 391,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\ClasesReservaTransporte\\Repositories\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "ClasesReservaTransporte\\Repositories\\GenericRepository.cs",
+              "ToolTip": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\ClasesReservaTransporte\\Repositories\\GenericRepository.cs",
+              "RelativeToolTip": "ClasesReservaTransporte\\Repositories\\GenericRepository.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAmwBYAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-21T22:35:38.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\ClasesReservaTransporte\\Data\\AplicationDbContext.cs",
+              "RelativeDocumentMoniker": "ClasesReservaTransporte\\Data\\AplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\ClasesReservaTransporte\\Data\\AplicationDbContext.cs",
+              "RelativeToolTip": "ClasesReservaTransporte\\Data\\AplicationDbContext.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAqwBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-21T22:26:44.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AltaVehiculo.cs",
+              "DocumentMoniker": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Admin\\ABM_Vehiculo\\AltaVehiculo\\AltaVehiculo.cs",
+              "RelativeDocumentMoniker": "Interfaz\\Admin\\ABM_Vehiculo\\AltaVehiculo\\AltaVehiculo.cs",
+              "ToolTip": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Admin\\ABM_Vehiculo\\AltaVehiculo\\AltaVehiculo.cs",
+              "RelativeToolTip": "Interfaz\\Admin\\ABM_Vehiculo\\AltaVehiculo\\AltaVehiculo.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAArwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-21T22:26:07.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AltaVehiculo.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Admin\\ABM_Vehiculo\\AltaVehiculo\\AltaVehiculo.cs",
+              "RelativeDocumentMoniker": "Interfaz\\Admin\\ABM_Vehiculo\\AltaVehiculo\\AltaVehiculo.cs",
+              "ToolTip": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Admin\\ABM_Vehiculo\\AltaVehiculo\\AltaVehiculo.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Interfaz\\Admin\\ABM_Vehiculo\\AltaVehiculo\\AltaVehiculo.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-21T22:26:06.525Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RegistroUsu.cs",
+              "DocumentMoniker": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Cliente\\ABMCliente\\RegistroUsu.cs",
+              "RelativeDocumentMoniker": "Interfaz\\Cliente\\ABMCliente\\RegistroUsu.cs",
+              "ToolTip": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Cliente\\ABMCliente\\RegistroUsu.cs",
+              "RelativeToolTip": "Interfaz\\Cliente\\ABMCliente\\RegistroUsu.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAewDgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-21T22:18:50.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "MenuCliente.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Cliente\\MenuCliente.cs",
               "RelativeDocumentMoniker": "Interfaz\\Cliente\\MenuCliente.cs",
@@ -58,56 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RegistroUsu.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Cliente\\ABMCliente\\RegistroUsu.cs",
-              "RelativeDocumentMoniker": "Interfaz\\Cliente\\ABMCliente\\RegistroUsu.cs",
-              "ToolTip": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Cliente\\ABMCliente\\RegistroUsu.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Interfaz\\Cliente\\ABMCliente\\RegistroUsu.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T21:27:27.588Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Inicio.cs",
-              "DocumentMoniker": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Inicio.cs",
-              "RelativeDocumentMoniker": "Interfaz\\Inicio.cs",
-              "ToolTip": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Inicio.cs",
-              "RelativeToolTip": "Interfaz\\Inicio.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAjwBkAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T21:25:10.808Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CreacionTipo.cs",
-              "DocumentMoniker": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Admin\\CreacionTipo.cs",
-              "RelativeDocumentMoniker": "Interfaz\\Admin\\CreacionTipo.cs",
-              "ToolTip": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Admin\\CreacionTipo.cs",
-              "RelativeToolTip": "Interfaz\\Admin\\CreacionTipo.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAWwBMAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T21:22:30.976Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CreacionTipo.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Admin\\CreacionTipo.cs",
-              "RelativeDocumentMoniker": "Interfaz\\Admin\\CreacionTipo.cs",
-              "ToolTip": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Admin\\CreacionTipo.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Interfaz\\Admin\\CreacionTipo.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T21:22:28.922Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Program.cs",
               "RelativeDocumentMoniker": "Interfaz\\Program.cs",
@@ -120,7 +159,57 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
+              "Title": "RegistroUsu.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Cliente\\ABMCliente\\RegistroUsu.cs",
+              "RelativeDocumentMoniker": "Interfaz\\Cliente\\ABMCliente\\RegistroUsu.cs",
+              "ToolTip": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Cliente\\ABMCliente\\RegistroUsu.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Interfaz\\Cliente\\ABMCliente\\RegistroUsu.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-20T21:27:27.588Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Inicio.cs",
+              "DocumentMoniker": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Inicio.cs",
+              "RelativeDocumentMoniker": "Interfaz\\Inicio.cs",
+              "ToolTip": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Inicio.cs",
+              "RelativeToolTip": "Interfaz\\Inicio.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAnwDMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-20T21:25:10.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CreacionTipo.cs",
+              "DocumentMoniker": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Admin\\CreacionTipo.cs",
+              "RelativeDocumentMoniker": "Interfaz\\Admin\\CreacionTipo.cs",
+              "ToolTip": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Admin\\CreacionTipo.cs",
+              "RelativeToolTip": "Interfaz\\Admin\\CreacionTipo.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAWwBMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-20T21:22:30.976Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CreacionTipo.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Admin\\CreacionTipo.cs",
+              "RelativeDocumentMoniker": "Interfaz\\Admin\\CreacionTipo.cs",
+              "ToolTip": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Admin\\CreacionTipo.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Interfaz\\Admin\\CreacionTipo.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-20T21:22:28.922Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Inicio.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Inicio.cs",
               "RelativeDocumentMoniker": "Interfaz\\Inicio.cs",
@@ -132,7 +221,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\ClasesReservaTransporte\\Models\\Cliente.cs",
+              "RelativeDocumentMoniker": "ClasesReservaTransporte\\Models\\Cliente.cs",
+              "ToolTip": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\ClasesReservaTransporte\\Models\\Cliente.cs",
+              "RelativeToolTip": "ClasesReservaTransporte\\Models\\Cliente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-21T22:19:35.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "MenuAdmin.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\tomas\\OneDrive\\Documentos\\GitHub\\TP_-ReservaTransporte-_-Pierro-Robledo-\\Interfaz\\Admin\\MenuAdmin.cs",
               "RelativeDocumentMoniker": "Interfaz\\Admin\\MenuAdmin.cs",
