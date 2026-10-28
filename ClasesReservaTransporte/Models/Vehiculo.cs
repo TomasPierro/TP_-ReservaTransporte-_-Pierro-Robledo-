@@ -7,6 +7,7 @@
         public string Modelo { get; set; }
         public string Patente { get; set; }
         public double CosteXdia { get; set; }
+        public bool Estado { get; set; }
         public int TipoVehiculoId { get; set; }
     }
 }

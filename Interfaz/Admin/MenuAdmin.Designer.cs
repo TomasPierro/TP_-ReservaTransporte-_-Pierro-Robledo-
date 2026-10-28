@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             button1 = new Button();
-            button2 = new Button();
             button3 = new Button();
             label1 = new Label();
             button4 = new Button();
             label2 = new Label();
             button5 = new Button();
             button6 = new Button();
+            button2 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -48,23 +48,15 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // button2
-            // 
-            button2.Location = new Point(316, 200);
-            button2.Name = "button2";
-            button2.Size = new Size(199, 29);
-            button2.TabIndex = 1;
-            button2.Text = "Registrar Cliente";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
-            button3.Location = new Point(316, 257);
+            button3.Location = new Point(316, 233);
             button3.Name = "button3";
             button3.Size = new Size(199, 29);
             button3.TabIndex = 2;
             button3.Text = "Ver Reportes";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // label1
             // 
@@ -113,18 +105,28 @@
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
+            // button2
+            // 
+            button2.Location = new Point(316, 186);
+            button2.Name = "button2";
+            button2.Size = new Size(199, 29);
+            button2.TabIndex = 8;
+            button2.Text = "Registrar Chofer";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // MenuAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button2);
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(label2);
             Controls.Add(button4);
             Controls.Add(label1);
             Controls.Add(button3);
-            Controls.Add(button2);
             Controls.Add(button1);
             Name = "MenuAdmin";
             Text = "MenuAdmin";
@@ -135,12 +137,12 @@
         #endregion
 
         private Button button1;
-        private Button button2;
         private Button button3;
         private Label label1;
         private Button button4;
         private Label label2;
         private Button button5;
         private Button button6;
+        private Button button2;
     }
 }

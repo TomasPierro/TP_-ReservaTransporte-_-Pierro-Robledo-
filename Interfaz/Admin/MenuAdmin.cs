@@ -40,5 +40,20 @@ namespace Interfaz.Admin
             modificacion.Show();
             this.Hide();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            reportes reportes = new reportes();
+            reportes.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            RegistroChofer registroChofer = new RegistroChofer();
+            registroChofer.Show();
+            this.Hide();
+
+        }
     }
 }

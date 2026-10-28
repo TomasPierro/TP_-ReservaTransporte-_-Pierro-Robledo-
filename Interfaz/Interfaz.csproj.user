@@ -19,10 +19,22 @@
     <Compile Update="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Cliente\MenuCliente.cs">
+    <Compile Update="Usuario\FinReserva.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Cliente\ABMCliente\RegistroUsu.cs">
+    <Compile Update="Usuario\MenuCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Usuario\ABMCliente\RegistroUsu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Admin\reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Admin\RegistroChofer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Usuario\RegistrarReserva.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

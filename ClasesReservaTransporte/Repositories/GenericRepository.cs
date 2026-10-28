@@ -10,7 +10,7 @@ namespace ClasesReservaTransporte.Repositories
         public GenericRepository()
         {
           _context = new AplicationDbContext();
-          _context.Database.EnsureCreated();
+          
 
         }
         public void Agregar(T entidad)

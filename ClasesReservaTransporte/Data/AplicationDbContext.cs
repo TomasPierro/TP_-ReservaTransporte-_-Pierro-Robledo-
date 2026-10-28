@@ -14,7 +14,7 @@ namespace ClasesReservaTransporte.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=C:\\database\\TPFINAL.db");
+            optionsBuilder.UseSqlite("Data Source=TPFINAL.db");
         }
     }
 }
