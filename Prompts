@@ -24,3 +24,11 @@ Aunque uses long, que admite números más grandes, para teléfonos no es la mej
 
 La solución: usar string
 Guardá el teléfono como texto:
+
+Se detuvo el comando en ejecución porque la variable de preferencia "ErrorActionPreference" o un parámetro común se han establecido en Stop: C:\Users\tomas\OneDrive\Documentos\GitHub\TP_-ReservaTransporte-_-Pierro-Robledo-\Interfaz\Interfaz.csproj : warning NU1900: Error al obtener los datos de vulnerabilidad del paquete: No se puede cargar el índice de servicio del origen https://api.nuget.org/v3/index.json.
+
+Este error ocurre porque tu script de PowerShell está configurado para detenerse ante cualquier advertencia (ErrorActionPreference = 'Stop') y tu entorno actual no tiene conexión a internet o no puede acceder al servidor de NuGet para verificar vulnerabilidades.
+
+O de forma definitiva, abriendo tu archivo Interfaz.csproj y agregando la siguiente etiqueta dentro de <PropertyGroup>:
+xml
+<NugetAudit>false</NugetAudit>
