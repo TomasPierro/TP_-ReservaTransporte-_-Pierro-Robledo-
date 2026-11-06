@@ -32,3 +32,7 @@ Este error ocurre porque tu script de PowerShell está configurado para deteners
 O de forma definitiva, abriendo tu archivo Interfaz.csproj y agregando la siguiente etiqueta dentro de <PropertyGroup>:
 xml
 <NugetAudit>false</NugetAudit>
+
+quiero que me digas como crear un usuario admin apenas se inicia el progra ma y que si ya exista no se vuelva a crear
+
+basicamente no dijo que en vez de cambian el generic , que creemos una clase con el metodo crear admin con if para ver si ya existia o no y llamarlo desde el program de la interfaz antes de que se ejecute la form de inicio
