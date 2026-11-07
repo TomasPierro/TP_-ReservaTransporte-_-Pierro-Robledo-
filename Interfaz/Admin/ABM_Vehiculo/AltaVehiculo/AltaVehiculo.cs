@@ -20,17 +20,42 @@ namespace Interfaz.ABM_Vehiculo
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(textBox1.Text) ||
+                string.IsNullOrWhiteSpace(textBox2.Text) ||
+                string.IsNullOrWhiteSpace(textBox3.Text) ||
+                string.IsNullOrWhiteSpace(textBox4.Text) ||
+                string.IsNullOrWhiteSpace(textBox5.Text))
+            {
+                MessageBox.Show("Todos los campos son obligatorios.");
+                return;
+            }
+            
 
             GenericRepository<Vehiculo> vehiculoRepository = new GenericRepository<Vehiculo>();
             string Marca = textBox1.Text;
             string Modelo = textBox2.Text;
             string Patente = textBox3.Text;
-            double CosteXdia = double.Parse(textBox4.Text);
-            int TipoVehiculoId = int.Parse(textBox5.Text);
-
-            vehiculoRepository.Agregar(new Vehiculo { Marca = Marca, Modelo = Modelo, Patente = Patente, CosteXdia = CosteXdia, TipoVehiculoId = TipoVehiculoId });
+            if (!double.TryParse(textBox4.Text, out double CosteXdia))
+            {
+                MessageBox.Show("El coste por día debe contener solamente números.");
+                return;
+            }
+            foreach (var vehiculo in vehiculoRepository.ObtenerTodos())
+            {
+                if (vehiculo.Patente == Patente)
+                {
+                    MessageBox.Show("Ya existe un vehículo con la misma patente.");
+                    return;
+                }
+            }
+            string TipoVehiculo = textBox5.Text;
+            bool Estado = true; // Asignar el estado como disponible al crear un nuevo vehículo
+            vehiculoRepository.Agregar(new Vehiculo { Marca = Marca, Modelo = Modelo, Patente = Patente, CosteXdia = CosteXdia, TipoVehiculo = TipoVehiculo, Estado = Estado });
 
             MessageBox.Show("Vehiculo agregado correctamente");
+            MenuAdmin menuAdmin = new MenuAdmin();
+            menuAdmin.Show();
+            this.Hide();
             return;
 
         }
@@ -58,18 +83,6 @@ namespace Interfaz.ABM_Vehiculo
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            listBox1.Items.Clear();
-            GenericRepository<TipoVehiculo> tipoVehiculoRepository = new GenericRepository<TipoVehiculo>();
-            List<TipoVehiculo> tiposVehiculos = tipoVehiculoRepository.ObtenerTodos();
-            foreach (TipoVehiculo tipoVehiculo in tiposVehiculos)
-            {
-                listBox1.Items.Add($"{tipoVehiculo.Id} - {tipoVehiculo.Tipo}");
-            }
-
-        }
-
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -80,6 +93,11 @@ namespace Interfaz.ABM_Vehiculo
             MenuAdmin menuAdmin = new MenuAdmin();
             menuAdmin.Show();
             this.Hide();
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

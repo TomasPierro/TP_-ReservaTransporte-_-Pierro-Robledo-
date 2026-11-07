@@ -51,13 +51,13 @@
             listBox1.FormattingEnabled = true;
             listBox1.Location = new Point(251, 28);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(344, 104);
+            listBox1.Size = new Size(517, 104);
             listBox1.TabIndex = 0;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // button1
             // 
-            button1.Location = new Point(638, 28);
+            button1.Location = new Point(129, 66);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 1;

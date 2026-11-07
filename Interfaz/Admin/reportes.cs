@@ -11,8 +11,12 @@ using System.Windows.Forms;
 
 namespace Interfaz
 {
-    public partial class reportes : Form
+    public partial class Reportes : Form
     {
+        public Reportes()
+        {
+            InitializeComponent();
+        }
         private void button6_Click(object sender, EventArgs e)
         {
             MenuAdmin menu = new MenuAdmin();
@@ -39,7 +43,6 @@ namespace Interfaz
         {
 
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             GenericRepository<Vehiculo> vehiculoRepository = new GenericRepository<Vehiculo>();

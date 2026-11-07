@@ -41,11 +41,12 @@
             label5 = new Label();
             textBox3 = new TextBox();
             label6 = new Label();
+            button3 = new Button();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(354, 334);
+            button1.Location = new Point(354, 272);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 0;
@@ -65,7 +66,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(214, 282);
+            label2.Location = new Point(202, 323);
             label2.Name = "label2";
             label2.Size = new Size(84, 20);
             label2.TabIndex = 2;
@@ -73,9 +74,9 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(354, 279);
+            textBox1.Location = new Point(354, 323);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
+            textBox1.Size = new Size(151, 27);
             textBox1.TabIndex = 3;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
@@ -93,7 +94,7 @@
             // 
             textBox2.Location = new Point(354, 223);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
+            textBox2.Size = new Size(151, 27);
             textBox2.TabIndex = 5;
             textBox2.TextChanged += textBox2_TextChanged;
             // 
@@ -111,13 +112,13 @@
             label4.AutoSize = true;
             label4.Location = new Point(239, 246);
             label4.Name = "label4";
-            label4.Size = new Size(74, 20);
+            label4.Size = new Size(78, 20);
             label4.TabIndex = 7;
-            label4.Text = "1. si   2.no";
+            label4.Text = "1. si   2. no";
             // 
             // button2
             // 
-            button2.Location = new Point(511, 12);
+            button2.Location = new Point(592, 12);
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
             button2.TabIndex = 8;
@@ -128,16 +129,16 @@
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(319, 12);
+            listBox1.Location = new Point(262, 12);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(186, 64);
+            listBox1.Size = new Size(324, 64);
             listBox1.TabIndex = 9;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(209, 12);
+            label5.Location = new Point(147, 12);
             label5.Name = "label5";
             label5.Size = new Size(104, 20);
             label5.TabIndex = 10;
@@ -147,7 +148,7 @@
             // 
             textBox3.Location = new Point(354, 121);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
+            textBox3.Size = new Size(151, 27);
             textBox3.TabIndex = 11;
             textBox3.TextChanged += textBox3_TextChanged;
             // 
@@ -160,11 +161,22 @@
             label6.TabIndex = 12;
             label6.Text = "Ingrese ReservaID :";
             // 
+            // button3
+            // 
+            button3.Location = new Point(12, 12);
+            button3.Name = "button3";
+            button3.Size = new Size(94, 29);
+            button3.TabIndex = 13;
+            button3.Text = "Volver";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // FinReserva
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button3);
             Controls.Add(label6);
             Controls.Add(textBox3);
             Controls.Add(label5);
@@ -199,5 +211,6 @@
         private Label label5;
         private TextBox textBox3;
         private Label label6;
+        private Button button3;
     }
 }

@@ -33,11 +33,9 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            textBox1 = new TextBox();
             textBox2 = new TextBox();
             textBox3 = new TextBox();
             textBox4 = new TextBox();
-            label5 = new Label();
             button2 = new Button();
             label6 = new Label();
             label7 = new Label();
@@ -94,14 +92,6 @@
             label4.Size = new Size(0, 20);
             label4.TabIndex = 4;
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(363, 289);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 5;
-            textBox1.TextChanged += textBox1_TextChanged;
-            // 
             // textBox2
             // 
             textBox2.Location = new Point(203, 104);
@@ -125,15 +115,6 @@
             textBox4.Size = new Size(125, 27);
             textBox4.TabIndex = 8;
             textBox4.TextChanged += textBox4_TextChanged;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(157, 292);
-            label5.Name = "label5";
-            label5.Size = new Size(171, 20);
-            label5.TabIndex = 9;
-            label5.Text = " Rol 1 : Cliente 0 : Admin";
             // 
             // button2
             // 
@@ -227,11 +208,9 @@
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(button2);
-            Controls.Add(label5);
             Controls.Add(textBox4);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
-            Controls.Add(textBox1);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -250,11 +229,9 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private TextBox textBox1;
         private TextBox textBox2;
         private TextBox textBox3;
         private TextBox textBox4;
-        private Label label5;
         private Button button2;
         private Label label6;
         private Label label7;

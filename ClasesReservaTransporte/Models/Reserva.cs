@@ -9,6 +9,7 @@
         public int DiasReserva { get; set; }
         public double Seguro { get; set; }
         public double Seña { get; set; }
+        public bool Estado { get; set; } 
 
     }
 }

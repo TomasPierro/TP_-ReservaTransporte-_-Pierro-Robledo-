@@ -38,15 +38,13 @@
             textBox2 = new TextBox();
             textBox3 = new TextBox();
             textBox4 = new TextBox();
-            listBox1 = new ListBox();
             textBox5 = new TextBox();
-            button1 = new Button();
             button2 = new Button();
             SuspendLayout();
             // 
             // button4
             // 
-            button4.Location = new Point(345, 393);
+            button4.Location = new Point(345, 312);
             button4.Name = "button4";
             button4.Size = new Size(94, 29);
             button4.TabIndex = 3;
@@ -93,7 +91,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(159, 351);
+            label5.Location = new Point(159, 252);
             label5.Name = "label5";
             label5.Size = new Size(171, 20);
             label5.TabIndex = 8;
@@ -131,31 +129,13 @@
             textBox4.TabIndex = 12;
             textBox4.TextChanged += textBox4_TextChanged;
             // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(345, 252);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(205, 64);
-            listBox1.TabIndex = 13;
-            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
-            // 
             // textBox5
             // 
-            textBox5.Location = new Point(345, 351);
+            textBox5.Location = new Point(345, 245);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(205, 27);
             textBox5.TabIndex = 14;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(171, 266);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 15;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
+            textBox5.TextChanged += textBox5_TextChanged;
             // 
             // button2
             // 
@@ -173,9 +153,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(textBox5);
-            Controls.Add(listBox1);
             Controls.Add(textBox4);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
@@ -203,9 +181,7 @@
         private TextBox textBox2;
         private TextBox textBox3;
         private TextBox textBox4;
-        private ListBox listBox1;
         private TextBox textBox5;
-        private Button button1;
         private Button button2;
     }
 }

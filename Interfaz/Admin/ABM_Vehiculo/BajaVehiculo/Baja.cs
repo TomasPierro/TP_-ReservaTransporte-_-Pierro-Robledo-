@@ -1,6 +1,7 @@
 ﻿using ClasesReservaTransporte.Models;
 using ClasesReservaTransporte.Repositories;
 using Interfaz.Admin;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Interfaz.ABM_Vehiculo.BajaVehiculo
 {
@@ -35,7 +36,12 @@ namespace Interfaz.ABM_Vehiculo.BajaVehiculo
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+              
+            {
+                MessageBox.Show("El id es obligatorio para proceder.");
+                return;
+            }
             GenericRepository<Vehiculo> vehiculoRepository = new GenericRepository<Vehiculo>();
 
             List<Vehiculo> vehiculos = vehiculoRepository.ObtenerTodos();
@@ -48,6 +54,7 @@ namespace Interfaz.ABM_Vehiculo.BajaVehiculo
                 {
                     vehiculoRepository.Eliminar(vehiculo);
                     MessageBox.Show($"Vehículo con ID {idVehiculo} eliminado correctamente.");
+                    listBox1.Items.Clear();
                     return;
                 }
                 else

@@ -1,5 +1,9 @@
 ﻿using ClasesReservaTransporte.Models;
 using ClasesReservaTransporte.Repositories;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using Interfaz.Admin;
 
 namespace Interfaz
@@ -25,28 +29,34 @@ namespace Interfaz
         {
             GenericRepository<Cliente> clienteRepository = new GenericRepository<Cliente>();
             string nombreUsuario = textBox1.Text;
-            string contraseña = textBox2.Text;
-            foreach (var cliente in clienteRepository.ObtenerTodos())
+            string contrasenia = textBox2.Text;
+            var clienteEncontrado = clienteRepository.ObtenerTodos().FirstOrDefault(c => c.Nombre == nombreUsuario && c.Contrasenia == contrasenia);
+            
+            if (clienteEncontrado == null)
             {
-                if (cliente.Nombre == nombreUsuario && cliente.Contraseña == contraseña && cliente.Rol == 1)
-                {
-                    MessageBox.Show("Inicio de sesión exitoso");
-                    MenuCliente menuC = new MenuCliente();
-                    menuC.Show();
-                    this.Hide();
-                    return;
-                }
-                else if (cliente.Nombre == nombreUsuario && cliente.Contraseña == contraseña && cliente.Rol == 2)
-                {
-                    MessageBox.Show("Inicio de sesión exitoso");
-                    MenuAdmin menuAdmin = new MenuAdmin();
-                    menuAdmin.Show();
-                    this.Hide();
-                    return;
-                }
+                MessageBox.Show("Usuario o contraseña incorrectos");
+                return;
+            }
+           
+           
+            if (clienteEncontrado.Rol == 0)
+            {
+                MessageBox.Show("Inicio de sesión exitoso");
+                SesionActual.ClienteId = clienteEncontrado.Id;
+                MenuCliente menuC = new MenuCliente();
+                menuC.Show();
+                this.Hide();
+            }
+            else if (clienteEncontrado.Rol == 1)
+            {
+                MessageBox.Show("Inicio de sesión exitoso");
+
+                MenuAdmin menuAdmin = new MenuAdmin();
+                menuAdmin.Show();
+                this.Hide();
             }
         }
-
+             
         private void button2_Click(object sender, EventArgs e)
         {
             RegistroUsu registroUsu = new RegistroUsu();

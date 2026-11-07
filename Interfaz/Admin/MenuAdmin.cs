@@ -1,6 +1,7 @@
 ﻿using Interfaz.ABM_Vehiculo;
 using Interfaz.ABM_Vehiculo.BajaVehiculo;
 using Interfaz.ABM_Vehiculo.ModificacionVehiculo;
+using Interfaz.Admin.ABM_Chofer;
 
 namespace Interfaz.Admin
 {
@@ -15,14 +16,6 @@ namespace Interfaz.Admin
         {
             AltaVehiculo altaVehiculo = new AltaVehiculo();
             altaVehiculo.Show();
-            this.Hide();
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            CreacionTipo creacionTipo = new CreacionTipo();
-            creacionTipo.Show();
             this.Hide();
 
         }
@@ -43,8 +36,8 @@ namespace Interfaz.Admin
 
         private void button3_Click(object sender, EventArgs e)
         {
-            reportes reportes = new reportes();
-            reportes.Show();
+            Reportes Reportes = new Reportes();
+            Reportes.Show();
             this.Hide();
         }
 
@@ -54,6 +47,27 @@ namespace Interfaz.Admin
             registroChofer.Show();
             this.Hide();
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Inicio inicio = new Inicio();
+            inicio.Show();
+            this.Hide();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ModificacionChofer modificacionChofer = new ModificacionChofer();
+            modificacionChofer.Show();
+            this.Hide();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            BajaChofer bajaChofer = new BajaChofer();
+            bajaChofer.Show();
+            this.Hide();
         }
     }
 }

@@ -31,11 +31,14 @@
             button1 = new Button();
             button3 = new Button();
             label1 = new Label();
-            button4 = new Button();
             label2 = new Label();
             button5 = new Button();
             button6 = new Button();
             button2 = new Button();
+            button4 = new Button();
+            label3 = new Label();
+            button7 = new Button();
+            button8 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -50,7 +53,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(316, 233);
+            button3.Location = new Point(316, 255);
             button3.Name = "button3";
             button3.Size = new Size(199, 29);
             button3.TabIndex = 2;
@@ -66,20 +69,10 @@
             label1.Size = new Size(0, 20);
             label1.TabIndex = 3;
             // 
-            // button4
-            // 
-            button4.Location = new Point(316, 59);
-            button4.Name = "button4";
-            button4.Size = new Size(199, 29);
-            button4.TabIndex = 4;
-            button4.Text = "Registrar Tipos Vehiculo";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
-            // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(216, 116);
+            label2.Location = new Point(216, 111);
             label2.Name = "label2";
             label2.Size = new Size(72, 20);
             label2.TabIndex = 5;
@@ -109,22 +102,64 @@
             // 
             button2.Location = new Point(316, 186);
             button2.Name = "button2";
-            button2.Size = new Size(199, 29);
+            button2.Size = new Size(89, 29);
             button2.TabIndex = 8;
-            button2.Text = "Registrar Chofer";
+            button2.Text = "Registrar ";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(12, 12);
+            button4.Name = "button4";
+            button4.Size = new Size(94, 29);
+            button4.TabIndex = 9;
+            button4.Text = "Volver";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(216, 190);
+            label3.Name = "label3";
+            label3.Size = new Size(60, 20);
+            label3.TabIndex = 10;
+            label3.Text = "Chofer :";
+            // 
+            // button7
+            // 
+            button7.Location = new Point(368, 220);
+            button7.Name = "button7";
+            button7.Size = new Size(107, 29);
+            button7.TabIndex = 11;
+            button7.Text = "Modificar";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
+            // button8
+            // 
+            button8.Location = new Point(426, 186);
+            button8.Name = "button8";
+            button8.Size = new Size(94, 29);
+            button8.TabIndex = 12;
+            button8.Text = "Eliminar";
+            button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // MenuAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button8);
+            Controls.Add(button7);
+            Controls.Add(label3);
+            Controls.Add(button4);
             Controls.Add(button2);
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(label2);
-            Controls.Add(button4);
             Controls.Add(label1);
             Controls.Add(button3);
             Controls.Add(button1);
@@ -139,10 +174,13 @@
         private Button button1;
         private Button button3;
         private Label label1;
-        private Button button4;
         private Label label2;
         private Button button5;
         private Button button6;
         private Button button2;
+        private Button button4;
+        private Label label3;
+        private Button button7;
+        private Button button8;
     }
 }

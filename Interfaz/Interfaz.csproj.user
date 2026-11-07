@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="Admin\ABM_Chofer\BajaChofer.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Admin\ABM_Vehiculo\AltaVehiculo\AltaVehiculo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -10,13 +13,16 @@
     <Compile Update="Admin\ABM_Vehiculo\ModificacionVehiculo\Modificacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Admin\CreacionTipo.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Admin\MenuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Admin\ABM_Chofer\ModificacionChofer.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Usuario\ABMCliente\ModificacionCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Usuario\FinReserva.cs">
@@ -28,10 +34,10 @@
     <Compile Update="Usuario\ABMCliente\RegistroUsu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Admin\reportes.cs">
+    <Compile Update="Admin\Reportes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Admin\RegistroChofer.cs">
+    <Compile Update="Admin\ABM_Chofer\RegistroChofer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Usuario\RegistrarReserva.cs">

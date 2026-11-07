@@ -127,7 +127,6 @@ C:\Users\tomas\OneDrive\Documentos\GitHub\TP_-ReservaTransporte-_-Pierro-Robledo
 C:\Users\tomas\OneDrive\Documentos\GitHub\TP_-ReservaTransporte-_-Pierro-Robledo-\Interfaz\obj\Debug\net10.0-windows\Interfaz.ABM_Vehiculo.AltaVehiculo.resources
 C:\Users\tomas\OneDrive\Documentos\GitHub\TP_-ReservaTransporte-_-Pierro-Robledo-\Interfaz\obj\Debug\net10.0-windows\Interfaz.ABM_Vehiculo.BajaVehiculo.Baja.resources
 C:\Users\tomas\OneDrive\Documentos\GitHub\TP_-ReservaTransporte-_-Pierro-Robledo-\Interfaz\obj\Debug\net10.0-windows\Interfaz.ABM_Vehiculo.ModificacionVehiculo.Modificacion.resources
-C:\Users\tomas\OneDrive\Documentos\GitHub\TP_-ReservaTransporte-_-Pierro-Robledo-\Interfaz\obj\Debug\net10.0-windows\Interfaz.Admin.CreacionTipo.resources
 C:\Users\tomas\OneDrive\Documentos\GitHub\TP_-ReservaTransporte-_-Pierro-Robledo-\Interfaz\obj\Debug\net10.0-windows\Interfaz.Admin.MenuAdmin.resources
 C:\Users\tomas\OneDrive\Documentos\GitHub\TP_-ReservaTransporte-_-Pierro-Robledo-\Interfaz\obj\Debug\net10.0-windows\Interfaz.RegistroUsu.resources
 C:\Users\tomas\OneDrive\Documentos\GitHub\TP_-ReservaTransporte-_-Pierro-Robledo-\Interfaz\obj\Debug\net10.0-windows\Interfaz.MenuCliente.resources
@@ -150,3 +149,8 @@ C:\Users\tomas\OneDrive\Documentos\GitHub\TP_-ReservaTransporte-_-Pierro-Robledo
 C:\Users\tomas\OneDrive\Documentos\GitHub\TP_-ReservaTransporte-_-Pierro-Robledo-\Interfaz\obj\Debug\net10.0-windows\ref\Interfaz.dll
 C:\Users\tomas\OneDrive\Documentos\GitHub\TP_-ReservaTransporte-_-Pierro-Robledo-\Interfaz\obj\Debug\net10.0-windows\Interfaz.RegistroChofer.resources
 C:\Users\tomas\OneDrive\Documentos\GitHub\TP_-ReservaTransporte-_-Pierro-Robledo-\Interfaz\obj\Debug\net10.0-windows\Interfaz.reportes.resources
+C:\Users\tomas\OneDrive\Documentos\GitHub\TP_-ReservaTransporte-_-Pierro-Robledo-\Interfaz\obj\Debug\net10.0-windows\Interfaz.Usuario.FinReserva.resources
+C:\Users\tomas\OneDrive\Documentos\GitHub\TP_-ReservaTransporte-_-Pierro-Robledo-\Interfaz\obj\Debug\net10.0-windows\Interfaz.Usuario.RegistrarReserva.resources
+C:\Users\tomas\OneDrive\Documentos\GitHub\TP_-ReservaTransporte-_-Pierro-Robledo-\Interfaz\obj\Debug\net10.0-windows\Interfaz.Admin.ModificacionChofer.resources
+C:\Users\tomas\OneDrive\Documentos\GitHub\TP_-ReservaTransporte-_-Pierro-Robledo-\Interfaz\obj\Debug\net10.0-windows\Interfaz.Usuario.ABMCliente.ModificacionCliente.resources
+C:\Users\tomas\OneDrive\Documentos\GitHub\TP_-ReservaTransporte-_-Pierro-Robledo-\Interfaz\obj\Debug\net10.0-windows\Interfaz.Admin.ABM_Chofer.BajaChofer.resources

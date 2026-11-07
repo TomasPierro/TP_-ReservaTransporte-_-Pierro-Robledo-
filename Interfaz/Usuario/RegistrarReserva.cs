@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Interfaz.Usuario
 {
@@ -15,21 +16,6 @@ namespace Interfaz.Usuario
         public RegistrarReserva()
         {
             InitializeComponent();
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            GenericRepository<Cliente> clienteRepository = new GenericRepository<Cliente>();
-
-            foreach (var cliente in clienteRepository.ObtenerTodos())
-            {
-                listBox1.Items.Add($"ID: {cliente.Id}, Nombre: {cliente.Nombre}, Cédula: {cliente.Nro_Licencia}");
-            }
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -43,7 +29,11 @@ namespace Interfaz.Usuario
 
             foreach (var chofer in choferRepository.ObtenerTodos())
             {
-                listBox2.Items.Add($"ID: {chofer.Id}, Nombre: {chofer.Nombre}, Cédula: {chofer.Tipo_Licencia}");
+                //if (chofer.Estado == true) // Solo mostrar choferes disponibles
+                //{
+                    listBox2.Items.Add($"ID: {chofer.Id}, Nombre: {chofer.Nombre},Apellido:{chofer.Apellido} Cédula: {chofer.Tipo_Licencia}");
+               // }
+                
             }
         }
 
@@ -57,13 +47,12 @@ namespace Interfaz.Usuario
             GenericRepository<Vehiculo> vehiculoRepository = new GenericRepository<Vehiculo>();
             foreach (var vehiculo in vehiculoRepository.ObtenerTodos())
             {
-                listBox3.Items.Add($"ID: {vehiculo.Id}, Marca: {vehiculo.Marca}, Modelo: {vehiculo.Modelo}, Placa: {vehiculo.Patente}");
+                if (vehiculo.Estado == true) // Solo mostrar vehículos disponibles
+                {
+                    listBox3.Items.Add($"ID: {vehiculo.Id}, Marca: {vehiculo.Marca}, Modelo: {vehiculo.Modelo}, Placa: {vehiculo.Patente}");
+                }
+                
             }
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -90,15 +79,49 @@ namespace Interfaz.Usuario
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if ( 
+                string.IsNullOrWhiteSpace(textBox3.Text) ||
+                string.IsNullOrWhiteSpace(textBox4.Text) ||
+                string.IsNullOrWhiteSpace(comboBox1.Text))
+            {
+                MessageBox.Show("Todos los campos son obligatorios.");
+                return;
+            }
             GenericRepository<Reserva> reservaRepository = new GenericRepository<Reserva>();
             GenericRepository<Vehiculo> vehiculoRepository = new GenericRepository<Vehiculo>();
 
-            int clienteId = int.Parse(textBox1.Text);
+            int clienteId = SesionActual.ClienteId;
             int choferId = int.Parse(textBox2.Text);
+            foreach(var chofer in new GenericRepository<Chofer>().ObtenerTodos())
+            {
+                if (chofer.Id != choferId)
+                {
+                    MessageBox.Show("No se encontró el chofer seleccionado.");
+                    return;
+                }
+            } 
             int vehiculoId = int.Parse(textBox3.Text);
-            int diasReserva = int.Parse(textBox4.Text);
-            double seguro = Convert.ToDouble(comboBox1.SelectedItem);
+            foreach (var vehiculo in vehiculoRepository.ObtenerTodos())
+            {
+                if (vehiculo.Id != vehiculoId)
+                {
+                    MessageBox.Show("No se encontró el vehículo seleccionado.");
+                    return;
+                }
+            }
+            
+            if (!int.TryParse(textBox4.Text, out int diasReserva))
+            {
+                MessageBox.Show("El número de días debe contener solamente números.");
+                return;
+            }
+            string seguroSeleccionado = comboBox1.SelectedItem.ToString();
 
+            string precioTexto = seguroSeleccionado.Split('$')[1];
+
+            double seguro = Convert.ToDouble(precioTexto);
+
+            bool reservaExistente = true;//osea esta vigente
             foreach (var vehiculo in vehiculoRepository.ObtenerTodos())
             {
                 if (vehiculo.Id == vehiculoId)
@@ -106,10 +129,10 @@ namespace Interfaz.Usuario
                     double costeTotal = (vehiculo.CosteXdia * diasReserva) + seguro;
                     double seña = costeTotal * 0.5; // 50% del coste total
                     textBox6.Text = seña.ToString();
-                    reservaRepository.Agregar(new Reserva { ClienteId = clienteId, ChoferId = choferId, VehiculoId = vehiculoId, DiasReserva = diasReserva, Seguro = seguro, Seña = seña });
+                    reservaRepository.Agregar(new Reserva { ClienteId = clienteId, ChoferId = choferId, VehiculoId = vehiculoId, DiasReserva = diasReserva, Seguro = seguro, Seña = seña , Estado = reservaExistente});
                     vehiculo.Estado = false;
                     MessageBox.Show("Reserva registrada exitosamente.");
-                    return;
+                    return; 
                 }
             }
 

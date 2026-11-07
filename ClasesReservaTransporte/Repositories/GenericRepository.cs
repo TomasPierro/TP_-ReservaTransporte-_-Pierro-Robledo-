@@ -1,4 +1,5 @@
 ﻿using ClasesReservaTransporte.Data;
+using ClasesReservaTransporte.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ClasesReservaTransporte.Repositories
@@ -10,7 +11,7 @@ namespace ClasesReservaTransporte.Repositories
         public GenericRepository()
         {
           _context = new AplicationDbContext();
-          
+          _context.Database.EnsureCreated();
 
         }
         public void Agregar(T entidad)

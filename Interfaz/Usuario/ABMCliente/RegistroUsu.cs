@@ -1,5 +1,6 @@
 ﻿using ClasesReservaTransporte.Models;
 using ClasesReservaTransporte.Repositories;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Interfaz
 {
@@ -58,19 +59,51 @@ namespace Interfaz
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(textBox2.Text) ||
+               string.IsNullOrWhiteSpace(textBox3.Text) ||
+               string.IsNullOrWhiteSpace(textBox4.Text) ||
+               string.IsNullOrWhiteSpace(textBox5.Text) ||
+               string.IsNullOrWhiteSpace(textBox6.Text) ||
+               string.IsNullOrWhiteSpace(textBox7.Text) ||
+               string.IsNullOrWhiteSpace(textBox8.Text))
+            {
+                MessageBox.Show("Todos los campos son obligatorios.");
+                return;
+            }
             GenericRepository<Cliente> clienteRepository = new GenericRepository<Cliente>();
 
             string Nombre = textBox2.Text;
             string Apellido = textBox3.Text;
-            int Dni = int.Parse(textBox4.Text);
-            string Telefono = textBox5.Text;
-            int Nro_Licencia = int.Parse(textBox6.Text);
-            string Contraseña = textBox7.Text;
-            string Confirmar_Contraseña = textBox8.Text;
+            string Dni = textBox4.Text.Trim();
 
-            if (Contraseña == Confirmar_Contraseña)
+            if (!long.TryParse(Dni, out _))
             {
-                clienteRepository.Agregar(new Cliente { Nombre = Nombre, Apellido = Apellido, Dni = Dni, Telefono = Telefono, Nro_Licencia = Nro_Licencia, Contraseña = Contraseña });
+                MessageBox.Show("El DNI debe contener solamente números.");
+                return;
+            }
+            foreach (var cliente in clienteRepository.ObtenerTodos())
+            {
+                if (cliente.Dni == Dni)
+                {
+                    MessageBox.Show("El DNI ya está registrado. Por favor, ingrese un DNI diferente.");
+                    return;
+                }
+            }
+            string Telefono = textBox5.Text.Trim();
+
+            if (!long.TryParse(Telefono, out _))
+            {
+                MessageBox.Show("El teléfono debe contener solamente números.");
+                return;
+            }
+            string Nro_Licencia = textBox6.Text;
+            string Contrasenia = textBox7.Text;
+            string Confirmar_Contrasenia = textBox8.Text;
+            int Rol = 0; // Rol de usuario normal
+
+            if (Contrasenia == Confirmar_Contrasenia)
+            {
+                clienteRepository.Agregar(new Cliente { Nombre = Nombre, Apellido = Apellido, Dni = Dni, Telefono = Telefono, Nro_Licencia = Nro_Licencia, Contrasenia = Contrasenia, Rol = Rol });
                 MessageBox.Show("Usuario registrado correctamente");
                 Inicio inicioSecion = new Inicio();
                 inicioSecion.Show();

@@ -1,6 +1,6 @@
 ﻿namespace Interfaz
 {
-    partial class reportes
+    partial class Reportes
     {
         /// <summary>
         /// Required designer variable.
@@ -48,7 +48,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(109, 99);
+            button1.Location = new Point(32, 67);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 0;
@@ -58,7 +58,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(109, 274);
+            button2.Location = new Point(32, 265);
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
             button2.TabIndex = 1;
@@ -68,7 +68,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(445, 99);
+            button3.Location = new Point(32, 165);
             button3.Name = "button3";
             button3.Size = new Size(94, 29);
             button3.TabIndex = 2;
@@ -78,7 +78,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(445, 274);
+            button4.Location = new Point(32, 369);
             button4.Name = "button4";
             button4.Size = new Size(94, 29);
             button4.TabIndex = 3;
@@ -96,36 +96,36 @@
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(221, 99);
+            listBox1.Location = new Point(164, 44);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(192, 104);
+            listBox1.Size = new Size(570, 84);
             listBox1.TabIndex = 5;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // listBox2
             // 
             listBox2.FormattingEnabled = true;
-            listBox2.Location = new Point(221, 274);
+            listBox2.Location = new Point(164, 242);
             listBox2.Name = "listBox2";
-            listBox2.Size = new Size(192, 104);
+            listBox2.Size = new Size(570, 84);
             listBox2.TabIndex = 6;
             listBox2.SelectedIndexChanged += listBox2_SelectedIndexChanged;
             // 
             // listBox3
             // 
             listBox3.FormattingEnabled = true;
-            listBox3.Location = new Point(561, 99);
+            listBox3.Location = new Point(164, 142);
             listBox3.Name = "listBox3";
-            listBox3.Size = new Size(192, 104);
+            listBox3.Size = new Size(570, 84);
             listBox3.TabIndex = 7;
             listBox3.SelectedIndexChanged += listBox3_SelectedIndexChanged;
             // 
             // listBox4
             // 
             listBox4.FormattingEnabled = true;
-            listBox4.Location = new Point(561, 274);
+            listBox4.Location = new Point(164, 344);
             listBox4.Name = "listBox4";
-            listBox4.Size = new Size(192, 104);
+            listBox4.Size = new Size(570, 84);
             listBox4.TabIndex = 8;
             listBox4.SelectedIndexChanged += listBox4_SelectedIndexChanged;
             // 
@@ -139,7 +139,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(388, 27);
+            label2.Location = new Point(405, 9);
             label2.Name = "label2";
             label2.Size = new Size(68, 20);
             label2.TabIndex = 10;
@@ -158,7 +158,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(221, 76);
+            label3.Location = new Point(45, 44);
             label3.Name = "label3";
             label3.Size = new Size(61, 20);
             label3.TabIndex = 12;
@@ -167,7 +167,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(561, 76);
+            label4.Location = new Point(45, 142);
             label4.Name = "label4";
             label4.Size = new Size(71, 20);
             label4.TabIndex = 13;
@@ -176,7 +176,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(221, 251);
+            label5.Location = new Point(45, 242);
             label5.Name = "label5";
             label5.Size = new Size(66, 20);
             label5.TabIndex = 14;
@@ -185,13 +185,13 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(561, 251);
+            label6.Location = new Point(15, 344);
             label6.Name = "label6";
-            label6.Size = new Size(125, 20);
+            label6.Size = new Size(143, 20);
             label6.TabIndex = 15;
-            label6.Text = "Pagos fin Alquiler";
+            label6.Text = "Reservas Finalizadas";
             // 
-            // reportes
+            // Reportes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -212,7 +212,7 @@
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Name = "reportes";
+            Name = "Reportes";
             Text = "reportes";
             ResumeLayout(false);
             PerformLayout();

@@ -62,6 +62,12 @@ namespace Interfaz.ABM_Vehiculo.ModificacionVehiculo
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+              
+            {
+                MessageBox.Show("El id es obligatorio para proceder.");
+                return;
+            }
             GenericRepository<Vehiculo> vehiculoRepository = new GenericRepository<Vehiculo>();
 
             int idVehiculo = int.Parse(textBox1.Text);
@@ -103,6 +109,12 @@ namespace Interfaz.ABM_Vehiculo.ModificacionVehiculo
 
                     MessageBox.Show("Vehículo modificado correctamente");
                     listBox1.Items.Clear();
+                    textBox1.Clear();
+                    textBox2.Clear();
+                    textBox3.Clear();
+                    textBox4.Clear();
+                    textBox5.Clear();
+
                     return;
                 }
             }
