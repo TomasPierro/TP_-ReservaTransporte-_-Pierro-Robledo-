@@ -15,7 +15,7 @@ la entidad cliente va a reportar  los datos personales de la persona, el numero 
 
 y de las reservas reportara id  entidad cliente y  entidad vehículo, si se da el caso que se selecciona la opción de reservar con chofer también se sumaran esos datos además de la cantidad de días de reserva, el seguro y una seña  
 
-también modificara pagos, clientes y choferes 
+también modificara clientes y choferes 
 
 
 
