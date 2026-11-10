@@ -1,4 +1,4 @@
-# TP_-ReservaTransporte-_-Pierro-Robledo-  
+# TP_-ReservaTransporte-_-Pierro-Robledo-  Cuenta Admin : Administrador/admin123
 nuestro sistema gestionara reservas de vehículos de transporte 
 
 
