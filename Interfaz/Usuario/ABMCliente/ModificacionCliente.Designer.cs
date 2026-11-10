@@ -175,7 +175,7 @@
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
             button2.TabIndex = 14;
-            button2.Text = "Buscar";
+            button2.Text = "Mostrar";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 

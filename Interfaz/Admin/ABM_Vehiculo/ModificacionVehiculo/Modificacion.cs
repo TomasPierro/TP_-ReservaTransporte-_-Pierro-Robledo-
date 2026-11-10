@@ -1,26 +1,41 @@
-﻿using ClasesReservaTransporte.Models;
+﻿
+using System;
+using System.Windows.Forms;
+
+using ClasesReservaTransporte.Models;
 using ClasesReservaTransporte.Repositories;
 using Interfaz.Admin;
+using Interfaz.Services;
 
 namespace Interfaz.ABM_Vehiculo.ModificacionVehiculo
 {
     public partial class Modificacion : Form
     {
-        public Modificacion()
+        private readonly IGenericRepository<Vehiculo> _vehiculoRepository;
+        private readonly IFormNavigation _navigation;
+
+        public Modificacion(
+            IGenericRepository<Vehiculo> vehiculoRepository,
+            IFormNavigation navigation)
         {
             InitializeComponent();
+
+            _vehiculoRepository = vehiculoRepository;
+            _navigation = navigation;
         }
 
+        // Mostrar todos los vehículos
         private void button1_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
-            GenericRepository<Vehiculo> vehiculoRepository = new GenericRepository<Vehiculo>();
-            List<Vehiculo> vehiculos = vehiculoRepository.ObtenerTodos();
+
+            List<Vehiculo> vehiculos = _vehiculoRepository.ObtenerTodos();
+
             foreach (var vehiculo in vehiculos)
             {
-                listBox1.Items.Add($"ID: {vehiculo.Id}, Marca: {vehiculo.Marca}, Modelo: {vehiculo.Modelo}, Patente: {vehiculo.Patente}, CosteXdia: {vehiculo.CosteXdia}");
+                listBox1.Items.Add(
+                    $"ID: {vehiculo.Id}, Marca: {vehiculo.Marca}, Modelo: {vehiculo.Modelo}, Patente: {vehiculo.Patente}, CosteXdia: {vehiculo.CosteXdia}");
             }
-
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -28,11 +43,10 @@ namespace Interfaz.ABM_Vehiculo.ModificacionVehiculo
 
         }
 
+        // Volver al menú administrador
         private void button3_Click(object sender, EventArgs e)
         {
-            MenuAdmin menuAdmin = new MenuAdmin();
-            menuAdmin.Show();
-            this.Hide();
+            _navigation.Mostrar<MenuAdmin>(this);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -60,19 +74,22 @@ namespace Interfaz.ABM_Vehiculo.ModificacionVehiculo
 
         }
 
+        // Buscar vehículo por ID y cargar sus datos
         private void button2_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBox1.Text))
-              
             {
                 MessageBox.Show("El id es obligatorio para proceder.");
                 return;
             }
-            GenericRepository<Vehiculo> vehiculoRepository = new GenericRepository<Vehiculo>();
 
-            int idVehiculo = int.Parse(textBox1.Text);
+            if (!int.TryParse(textBox1.Text, out int idVehiculo))
+            {
+                MessageBox.Show("Ingrese un ID válido.");
+                return;
+            }
 
-            foreach (var vehiculo in vehiculoRepository.ObtenerTodos())
+            foreach (var vehiculo in _vehiculoRepository.ObtenerTodos())
             {
                 if (vehiculo.Id == idVehiculo)
                 {
@@ -86,28 +103,36 @@ namespace Interfaz.ABM_Vehiculo.ModificacionVehiculo
             }
 
             MessageBox.Show("Vehículo no encontrado");
-
-
         }
 
+        // Guardar modificación
         private void button4_Click(object sender, EventArgs e)
         {
-            GenericRepository<Vehiculo> vehiculoRepository = new GenericRepository<Vehiculo>();
+            if (!int.TryParse(textBox1.Text, out int id))
+            {
+                MessageBox.Show("Ingrese un ID válido.");
+                return;
+            }
 
-            int id = int.Parse(textBox1.Text);
+            if (!float.TryParse(textBox5.Text, out float coste))
+            {
+                MessageBox.Show("Ingrese un costo por día válido.");
+                return;
+            }
 
-            foreach (var vehiculo in vehiculoRepository.ObtenerTodos())
+            foreach (var vehiculo in _vehiculoRepository.ObtenerTodos())
             {
                 if (vehiculo.Id == id)
                 {
                     vehiculo.Marca = textBox2.Text;
                     vehiculo.Modelo = textBox3.Text;
                     vehiculo.Patente = textBox4.Text;
-                    vehiculo.CosteXdia = float.Parse(textBox5.Text);
+                    vehiculo.CosteXdia = coste;
 
-                    vehiculoRepository.Modificar(vehiculo);
+                    _vehiculoRepository.Modificar(vehiculo);
 
                     MessageBox.Show("Vehículo modificado correctamente");
+
                     listBox1.Items.Clear();
                     textBox1.Clear();
                     textBox2.Clear();

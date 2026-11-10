@@ -1,28 +1,31 @@
-﻿using ClasesReservaTransporte.Models;
+﻿
+using ClasesReservaTransporte.Models;
 using ClasesReservaTransporte.Repositories;
+using Interfaz.Services;
+using Interfaz.Admin;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Interfaz.Admin.ABM_Chofer
 {
     public partial class BajaChofer : Form
     {
-        public BajaChofer()
+        private readonly IGenericRepository<Chofer> _choferRepository;
+        private readonly IFormNavigation _navigation;
+
+        public BajaChofer(
+            IGenericRepository<Chofer> choferRepository,
+            IFormNavigation navigation)
         {
             InitializeComponent();
+
+            _choferRepository = choferRepository;
+            _navigation = navigation;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MenuAdmin menuAdmin = new MenuAdmin();
-            menuAdmin.Show();
-            this.Hide();
+            _navigation.Mostrar<MenuAdmin>(this);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -35,41 +38,48 @@ namespace Interfaz.Admin.ABM_Chofer
 
         }
 
+        // Eliminar chofer
         private void button2_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBox1.Text))
-              
             {
                 MessageBox.Show("El id es obligatorio.");
                 return;
             }
-            GenericRepository<Chofer> choferRepository = new GenericRepository<Chofer>();
-            
-            int choferId = int.Parse(textBox1.Text);
 
-            foreach (var chofer in choferRepository.ObtenerTodos())
+            if (!int.TryParse(textBox1.Text, out int choferId))
+            {
+                MessageBox.Show("Ingrese un ID válido.");
+                return;
+            }
+
+            foreach (var chofer in _choferRepository.ObtenerTodos())
             {
                 if (chofer.Id == choferId)
                 {
-                    choferRepository.Eliminar(chofer);
+                    _choferRepository.Eliminar(chofer);
+
                     MessageBox.Show("Chofer eliminado exitosamente.");
+
                     listBox1.Items.Clear();
                     textBox1.Clear();
                     return;
                 }
             }
 
+            MessageBox.Show("No se encontró un chofer con ese ID.");
         }
 
+        // Mostrar choferes
         private void button3_Click(object sender, EventArgs e)
         {
-            GenericRepository<Chofer> choferRepository = new GenericRepository<Chofer>();
+            listBox1.Items.Clear();
 
-            foreach (var chofer in choferRepository.ObtenerTodos())
+            foreach (var chofer in _choferRepository.ObtenerTodos())
             {
-                listBox1.Items.Add($"ID: {chofer.Id} - Nombre: {chofer.Nombre} - Apellido: {chofer.Apellido} - Nro_Licencia: {chofer.Tipo_Licencia}");
+                listBox1.Items.Add(
+                    $"ID: {chofer.Id} - Nombre: {chofer.Nombre} - Apellido: {chofer.Apellido} - Nro_Licencia: {chofer.Tipo_Licencia}");
             }
-
         }
     }
 }

@@ -1,21 +1,26 @@
-﻿using ClasesReservaTransporte.Repositories;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
+﻿
+using ClasesReservaTransporte.Repositories;
 using ClasesReservaTransporte.Models;
 using Interfaz.Admin;
+using Interfaz.Services;
+using System;
+using System.Windows.Forms;
 
 namespace Interfaz.ABM_Vehiculo
 {
     public partial class AltaVehiculo : Form
     {
-        public AltaVehiculo()
+        private readonly IGenericRepository<Vehiculo> _vehiculoRepository;
+        private readonly IFormNavigation _navigation;
+
+        public AltaVehiculo(
+            IGenericRepository<Vehiculo> vehiculoRepository,
+            IFormNavigation navigation)
         {
             InitializeComponent();
+
+            _vehiculoRepository = vehiculoRepository;
+            _navigation = navigation;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -29,18 +34,18 @@ namespace Interfaz.ABM_Vehiculo
                 MessageBox.Show("Todos los campos son obligatorios.");
                 return;
             }
-            
 
-            GenericRepository<Vehiculo> vehiculoRepository = new GenericRepository<Vehiculo>();
             string Marca = textBox1.Text;
             string Modelo = textBox2.Text;
             string Patente = textBox3.Text;
+
             if (!double.TryParse(textBox4.Text, out double CosteXdia))
             {
                 MessageBox.Show("El coste por día debe contener solamente números.");
                 return;
             }
-            foreach (var vehiculo in vehiculoRepository.ObtenerTodos())
+
+            foreach (var vehiculo in _vehiculoRepository.ObtenerTodos())
             {
                 if (vehiculo.Patente == Patente)
                 {
@@ -48,57 +53,56 @@ namespace Interfaz.ABM_Vehiculo
                     return;
                 }
             }
+
             string TipoVehiculo = textBox5.Text;
-            bool Estado = true; // Asignar el estado como disponible al crear un nuevo vehículo
-            vehiculoRepository.Agregar(new Vehiculo { Marca = Marca, Modelo = Modelo, Patente = Patente, CosteXdia = CosteXdia, TipoVehiculo = TipoVehiculo, Estado = Estado });
+            bool Estado = true;
+
+            _vehiculoRepository.Agregar(new Vehiculo
+            {
+                Marca = Marca,
+                Modelo = Modelo,
+                Patente = Patente,
+                CosteXdia = CosteXdia,
+                TipoVehiculo = TipoVehiculo,
+                Estado = Estado
+            });
 
             MessageBox.Show("Vehiculo agregado correctamente");
-            MenuAdmin menuAdmin = new MenuAdmin();
-            menuAdmin.Show();
-            this.Hide();
-            return;
 
+            _navigation.Mostrar<MenuAdmin>(this);
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
-
         }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MenuAdmin menuAdmin = new MenuAdmin();
-            menuAdmin.Show();
-            this.Hide();
-
+            _navigation.Mostrar<MenuAdmin>(this);
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-
         }
     }
 }

@@ -1,58 +1,70 @@
-﻿using ClasesReservaTransporte.Data;
-using ClasesReservaTransporte.Models;
+﻿using ClasesReservaTransporte.Models;
 using ClasesReservaTransporte.Repositories;
 using Interfaz.Admin;
+using Interfaz.Services;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Interfaz
 {
     public partial class RegistroChofer : Form
     {
-        public RegistroChofer()
+        private readonly IGenericRepository<Chofer> _choferRepository;
+        private readonly IFormNavigation _navigation;
+
+        public RegistroChofer(
+            IGenericRepository<Chofer> choferRepository,
+            IFormNavigation navigation)
         {
             InitializeComponent();
+
+            _choferRepository = choferRepository;
+            _navigation = navigation;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBox1.Text) ||
-               string.IsNullOrWhiteSpace(textBox2.Text) ||
-               string.IsNullOrWhiteSpace(textBox3.Text))
-               
+                string.IsNullOrWhiteSpace(textBox2.Text) ||
+                string.IsNullOrWhiteSpace(textBox3.Text))
             {
                 MessageBox.Show("Todos los campos son obligatorios.");
                 return;
             }
-            GenericRepository<Chofer> choferRepository = new GenericRepository<Chofer>();
+
             string nombre = textBox1.Text;
             string apellido = textBox2.Text;
             string tipoLicencia = textBox3.Text;
-            bool estado = true; //disponible por defecto
-            foreach (var chofer in choferRepository.ObtenerTodos())
+
+            bool estado = true; // Disponible por defecto
+
+            foreach (var chofer in _choferRepository.ObtenerTodos())
             {
-                if (chofer.Nombre == nombre && chofer.Apellido == apellido && chofer.Tipo_Licencia == tipoLicencia)
+                if (chofer.Nombre == nombre &&
+                    chofer.Apellido == apellido &&
+                    chofer.Tipo_Licencia == tipoLicencia)
                 {
                     MessageBox.Show("El chofer ya está registrado.");
                     return;
                 }
             }
-            choferRepository.Agregar(new Chofer { Nombre = nombre, Apellido = apellido, Tipo_Licencia = tipoLicencia, Estado = estado });
+
+            _choferRepository.Agregar(new Chofer
+            {
+                Nombre = nombre,
+                Apellido = apellido,
+                Tipo_Licencia = tipoLicencia,
+                Estado = estado
+            });
+
             MessageBox.Show("Chofer registrado exitosamente.");
-            MenuAdmin menuAdmin = new MenuAdmin();
-            menuAdmin.Show();
-            this.Hide();
+
+            _navigation.Mostrar<MenuAdmin>(this);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -67,9 +79,7 @@ namespace Interfaz
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MenuAdmin menuAdmin = new MenuAdmin();
-            menuAdmin.Show();
-            this.Hide();
+            _navigation.Mostrar<MenuAdmin>(this);
         }
     }
 }

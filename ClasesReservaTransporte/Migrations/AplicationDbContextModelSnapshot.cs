@@ -107,7 +107,7 @@ namespace ClasesReservaTransporte.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ChoferId")
+                    b.Property<int?>("ChoferId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("ClienteId")

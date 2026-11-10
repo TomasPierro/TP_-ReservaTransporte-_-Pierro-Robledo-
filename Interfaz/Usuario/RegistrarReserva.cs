@@ -1,21 +1,31 @@
 ﻿using ClasesReservaTransporte.Models;
 using ClasesReservaTransporte.Repositories;
+using Interfaz.Services;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
+using System.Globalization;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Interfaz.Usuario
 {
     public partial class RegistrarReserva : Form
     {
-        public RegistrarReserva()
+        private readonly IGenericRepository<Chofer> _choferRepository;
+        private readonly IGenericRepository<Vehiculo> _vehiculoRepository;
+        private readonly IGenericRepository<Reserva> _reservaRepository;
+        private readonly IFormNavigation _navigation;
+
+        public RegistrarReserva(
+            IGenericRepository<Chofer> choferRepository,
+            IGenericRepository<Vehiculo> vehiculoRepository,
+            IGenericRepository<Reserva> reservaRepository,
+            IFormNavigation navigation)
         {
             InitializeComponent();
+
+            _choferRepository = choferRepository;
+            _vehiculoRepository = vehiculoRepository;
+            _reservaRepository = reservaRepository;
+            _navigation = navigation;
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -23,17 +33,15 @@ namespace Interfaz.Usuario
 
         }
 
+        // Mostrar choferes
         private void button2_Click(object sender, EventArgs e)
         {
-            GenericRepository<Chofer> choferRepository = new GenericRepository<Chofer>();
+            listBox2.Items.Clear();
 
-            foreach (var chofer in choferRepository.ObtenerTodos())
+            foreach (var chofer in _choferRepository.ObtenerTodos())
             {
-                //if (chofer.Estado == true) // Solo mostrar choferes disponibles
-                //{
-                    listBox2.Items.Add($"ID: {chofer.Id}, Nombre: {chofer.Nombre},Apellido:{chofer.Apellido} Cédula: {chofer.Tipo_Licencia}");
-               // }
-                
+                listBox2.Items.Add(
+                    $"ID: {chofer.Id}, Nombre: {chofer.Nombre}, Apellido: {chofer.Apellido}, Cédula: {chofer.Tipo_Licencia}");
             }
         }
 
@@ -42,16 +50,17 @@ namespace Interfaz.Usuario
 
         }
 
+        // Mostrar vehículos disponibles
         private void button3_Click(object sender, EventArgs e)
         {
-            GenericRepository<Vehiculo> vehiculoRepository = new GenericRepository<Vehiculo>();
-            foreach (var vehiculo in vehiculoRepository.ObtenerTodos())
+            listBox3.Items.Clear();
+
+            foreach (var vehiculo in _vehiculoRepository.ObtenerTodos())
             {
-                if (vehiculo.Estado == true) // Solo mostrar vehículos disponibles
+                if (vehiculo.Estado == true)
                 {
-                    listBox3.Items.Add($"ID: {vehiculo.Id}, Marca: {vehiculo.Marca}, Modelo: {vehiculo.Modelo}, Placa: {vehiculo.Patente}");
+                    listBox3.Items.Add($"ID: {vehiculo.Id},Precio por dia: {vehiculo.CosteXdia}, Marca: {vehiculo.Marca}, Modelo: {vehiculo.Modelo}, Placa: {vehiculo.Patente}");
                 }
-                
             }
         }
 
@@ -70,72 +79,133 @@ namespace Interfaz.Usuario
 
         }
 
-
-
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
         }
 
+        // Registrar reserva
         private void button4_Click(object sender, EventArgs e)
         {
-            if ( 
-                string.IsNullOrWhiteSpace(textBox3.Text) ||
+            if (string.IsNullOrWhiteSpace(textBox3.Text) ||
                 string.IsNullOrWhiteSpace(textBox4.Text) ||
-                string.IsNullOrWhiteSpace(comboBox1.Text))
+                comboBox1.SelectedItem == null)
             {
-                MessageBox.Show("Todos los campos son obligatorios.");
+                MessageBox.Show("Complete el vehículo, los días y el seguro.");
                 return;
             }
-            GenericRepository<Reserva> reservaRepository = new GenericRepository<Reserva>();
-            GenericRepository<Vehiculo> vehiculoRepository = new GenericRepository<Vehiculo>();
 
             int clienteId = SesionActual.ClienteId;
-            int choferId = int.Parse(textBox2.Text);
-            foreach(var chofer in new GenericRepository<Chofer>().ObtenerTodos())
+
+            // El chofer es opcional
+            int? choferId = null;
+
+            if (!string.IsNullOrWhiteSpace(textBox2.Text))
             {
-                if (chofer.Id != choferId)
+                if (!int.TryParse(textBox2.Text, out int idChofer))
+                {
+                    MessageBox.Show("Ingrese un ID de chofer válido.");
+                    return;
+                }
+
+                bool choferEncontrado = false;
+
+                foreach (var chofer in _choferRepository.ObtenerTodos())
+                {
+                    if (chofer.Id == idChofer)
+                    {
+                        choferEncontrado = true;
+                        choferId = idChofer;
+                        break;
+                    }
+                }
+
+                if (!choferEncontrado)
                 {
                     MessageBox.Show("No se encontró el chofer seleccionado.");
                     return;
                 }
-            } 
-            int vehiculoId = int.Parse(textBox3.Text);
-            foreach (var vehiculo in vehiculoRepository.ObtenerTodos())
-            {
-                if (vehiculo.Id != vehiculoId)
-                {
-                    MessageBox.Show("No se encontró el vehículo seleccionado.");
-                    return;
-                }
             }
-            
-            if (!int.TryParse(textBox4.Text, out int diasReserva))
+
+            // Validar vehículo
+            if (!int.TryParse(textBox3.Text, out int vehiculoId))
             {
-                MessageBox.Show("El número de días debe contener solamente números.");
+                MessageBox.Show("Ingrese un ID de vehículo válido.");
                 return;
             }
-            string seguroSeleccionado = comboBox1.SelectedItem.ToString();
 
-            string precioTexto = seguroSeleccionado.Split('$')[1];
+            Vehiculo vehiculoSeleccionado = null;
 
-            double seguro = Convert.ToDouble(precioTexto);
-
-            bool reservaExistente = true;//osea esta vigente
-            foreach (var vehiculo in vehiculoRepository.ObtenerTodos())
+            foreach (var vehiculo in _vehiculoRepository.ObtenerTodos())
             {
                 if (vehiculo.Id == vehiculoId)
                 {
-                    double costeTotal = (vehiculo.CosteXdia * diasReserva) + seguro;
-                    double seña = costeTotal * 0.5; // 50% del coste total
-                    textBox6.Text = seña.ToString();
-                    reservaRepository.Agregar(new Reserva { ClienteId = clienteId, ChoferId = choferId, VehiculoId = vehiculoId, DiasReserva = diasReserva, Seguro = seguro, Seña = seña , Estado = reservaExistente});
-                    vehiculo.Estado = false;
-                    MessageBox.Show("Reserva registrada exitosamente.");
-                    return; 
+                    vehiculoSeleccionado = vehiculo;
+                    break;
                 }
             }
 
+            if (vehiculoSeleccionado == null)
+            {
+                MessageBox.Show("No se encontró el vehículo seleccionado.");
+                return;
+            }
+
+            if (!vehiculoSeleccionado.Estado)
+            {
+                MessageBox.Show("El vehículo ya no está disponible.");
+                return;
+            }
+
+            // Validar días
+            if (!int.TryParse(textBox4.Text, out int diasReserva) ||
+                diasReserva <= 0)
+            {
+                MessageBox.Show("Ingrese una cantidad de días válida.");
+                return;
+            }
+
+            // Obtener precio del seguro
+            string seguroSeleccionado = comboBox1.SelectedItem.ToString();
+
+            string[] partesSeguro = seguroSeleccionado.Split('$');
+
+            if (partesSeguro.Length < 2 ||
+                !double.TryParse(
+                    partesSeguro[1].Trim(),
+                    NumberStyles.Any,
+                    CultureInfo.CurrentCulture,
+                    out double seguro))
+            {
+                MessageBox.Show("No se pudo obtener el precio del seguro.");
+                return;
+            }
+
+            // Calcular costo y seña
+            double costeTotal =
+                (vehiculoSeleccionado.CosteXdia * diasReserva) + seguro;
+
+            double seña = costeTotal * 0.5;
+
+            textBox6.Text = seña.ToString();
+
+            // Crear reserva
+            _reservaRepository.Agregar(new Reserva
+            {
+                ClienteId = clienteId,
+                ChoferId = choferId,
+                VehiculoId = vehiculoId,
+                DiasReserva = diasReserva,
+                Seguro = seguro,
+                Seña = seña,
+                Estado = true
+            });
+
+            // Marcar vehículo como no disponible
+            vehiculoSeleccionado.Estado = false;
+            _vehiculoRepository.Modificar(vehiculoSeleccionado);
+
+            MessageBox.Show("Reserva registrada exitosamente.");
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -143,11 +213,10 @@ namespace Interfaz.Usuario
 
         }
 
+        // Volver al menú del cliente
         private void button5_Click(object sender, EventArgs e)
         {
-            MenuCliente menuCliente = new MenuCliente();
-            menuCliente.Show();
-            this.Hide();
+            _navigation.Mostrar<MenuCliente>(this);
         }
     }
 }

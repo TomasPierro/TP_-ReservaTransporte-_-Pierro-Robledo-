@@ -204,10 +204,10 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Contra todo $35000", "Contra Choque Frotal $30000", "Basico $20000" });
+            comboBox1.Items.AddRange(new object[] { "Contra todo $35000", "Choque Frotal $30000", "Basico $20000" });
             comboBox1.Location = new Point(187, 222);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
+            comboBox1.Size = new Size(191, 28);
             comboBox1.TabIndex = 24;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 

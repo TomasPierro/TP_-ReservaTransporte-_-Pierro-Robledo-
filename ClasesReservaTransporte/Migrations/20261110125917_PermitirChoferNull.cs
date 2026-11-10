@@ -5,7 +5,7 @@
 namespace ClasesReservaTransporte.Migrations
 {
     /// <inheritdoc />
-    public partial class Migraclases : Migration
+    public partial class PermitirChoferNull : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -67,7 +67,7 @@ namespace ClasesReservaTransporte.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     ClienteId = table.Column<int>(type: "INTEGER", nullable: false),
-                    ChoferId = table.Column<int>(type: "INTEGER", nullable: false),
+                    ChoferId = table.Column<int>(type: "INTEGER", nullable: true),
                     VehiculoId = table.Column<int>(type: "INTEGER", nullable: false),
                     DiasReserva = table.Column<int>(type: "INTEGER", nullable: false),
                     Seguro = table.Column<double>(type: "REAL", nullable: false),

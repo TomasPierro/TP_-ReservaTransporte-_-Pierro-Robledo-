@@ -8,11 +8,9 @@ namespace ClasesReservaTransporte.Repositories
     {
         private readonly AplicationDbContext _context;
 
-        public GenericRepository()
+        public GenericRepository(AplicationDbContext context)
         {
-          _context = new AplicationDbContext();
-          _context.Database.EnsureCreated();
-
+            _context = context;
         }
         public void Agregar(T entidad)
         {

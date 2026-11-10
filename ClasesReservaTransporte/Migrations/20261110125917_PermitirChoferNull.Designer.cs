@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClasesReservaTransporte.Migrations
 {
     [DbContext(typeof(AplicationDbContext))]
-    [Migration("20261107074731_Migraclases")]
-    partial class Migraclases
+    [Migration("20261110125917_PermitirChoferNull")]
+    partial class PermitirChoferNull
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -110,7 +110,7 @@ namespace ClasesReservaTransporte.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ChoferId")
+                    b.Property<int?>("ChoferId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("ClienteId")

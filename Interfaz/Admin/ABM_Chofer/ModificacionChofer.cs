@@ -1,24 +1,25 @@
-﻿using ClasesReservaTransporte.Models;
+﻿
+using ClasesReservaTransporte.Models;
 using ClasesReservaTransporte.Repositories;
+using Interfaz.Services;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-{
-    
-}
 
 namespace Interfaz.Admin
 {
     public partial class ModificacionChofer : Form
     {
-        public ModificacionChofer()
+        private readonly IGenericRepository<Chofer> _choferRepository;
+        private readonly IFormNavigation _navigation;
+
+        public ModificacionChofer(
+            IGenericRepository<Chofer> choferRepository,
+            IFormNavigation navigation)
         {
             InitializeComponent();
+
+            _choferRepository = choferRepository;
+            _navigation = navigation;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -26,30 +27,34 @@ namespace Interfaz.Admin
 
         }
 
+        // Mostrar todos los choferes
         private void button1_Click(object sender, EventArgs e)
         {
-            GenericRepository<Chofer> choferRepository = new GenericRepository<Chofer>();
+            listBox1.Items.Clear();
 
-            foreach (var Chofer in choferRepository.ObtenerTodos())
+            foreach (var chofer in _choferRepository.ObtenerTodos())
             {
-                listBox1.Items.Add($"ID: {Chofer.Id} - Nombre: {Chofer.Nombre} - Apellido: {Chofer.Apellido} - Nro_Licencia: {Chofer.Tipo_Licencia}");
+                listBox1.Items.Add(
+                    $"ID: {chofer.Id} - Nombre: {chofer.Nombre} - Apellido: {chofer.Apellido} - Nro_Licencia: {chofer.Tipo_Licencia}");
             }
-
         }
 
+        // Buscar chofer por ID
         private void button3_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBox1.Text)) 
-               
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
                 MessageBox.Show("El ID es obligatorio.");
                 return;
             }
-            GenericRepository<Chofer> choferRepository = new GenericRepository<Chofer>();
 
-            int choferId = int.Parse(textBox1.Text);
+            if (!int.TryParse(textBox1.Text, out int choferId))
+            {
+                MessageBox.Show("Ingrese un ID válido.");
+                return;
+            }
 
-            foreach (var chofer in choferRepository.ObtenerTodos())
+            foreach (var chofer in _choferRepository.ObtenerTodos())
             {
                 if (chofer.Id == choferId)
                 {
@@ -59,6 +64,7 @@ namespace Interfaz.Admin
                     return;
                 }
             }
+
             MessageBox.Show("Chofer no encontrado.");
         }
 
@@ -82,20 +88,27 @@ namespace Interfaz.Admin
 
         }
 
+        // Guardar modificación
         private void button2_Click(object sender, EventArgs e)
         {
-            GenericRepository<Chofer> choferRepository = new GenericRepository<Chofer>();
+            if (!int.TryParse(textBox1.Text, out int choferId))
+            {
+                MessageBox.Show("Ingrese un ID válido.");
+                return;
+            }
 
-            int choferId = int.Parse(textBox1.Text);
-            foreach (var chofer in choferRepository.ObtenerTodos())
+            foreach (var chofer in _choferRepository.ObtenerTodos())
             {
                 if (chofer.Id == choferId)
                 {
                     chofer.Nombre = textBox2.Text;
                     chofer.Apellido = textBox3.Text;
                     chofer.Tipo_Licencia = textBox4.Text;
-                    choferRepository.Modificar(chofer);
+
+                    _choferRepository.Modificar(chofer);
+
                     MessageBox.Show("Chofer actualizado correctamente.");
+
                     listBox1.Items.Clear();
                     textBox1.Clear();
                     textBox2.Clear();
@@ -105,14 +118,14 @@ namespace Interfaz.Admin
                     return;
                 }
             }
+
             MessageBox.Show("Chofer no encontrado.");
         }
 
+        // Volver al menú
         private void button4_Click(object sender, EventArgs e)
         {
-            MenuAdmin menuAdmin = new MenuAdmin();
-            menuAdmin.Show();
-            this.Hide();
+            _navigation.Mostrar<MenuAdmin>(this);
         }
     }
 }

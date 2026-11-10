@@ -114,7 +114,7 @@
             label4.Name = "label4";
             label4.Size = new Size(78, 20);
             label4.TabIndex = 7;
-            label4.Text = "1. si   2. no";
+            label4.Text = "1. si   0. no";
             // 
             // button2
             // 

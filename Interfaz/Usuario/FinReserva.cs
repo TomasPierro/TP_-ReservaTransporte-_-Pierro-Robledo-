@@ -1,21 +1,32 @@
-﻿using ClasesReservaTransporte.Models;
+﻿
+using ClasesReservaTransporte.Models;
 using ClasesReservaTransporte.Repositories;
+using Interfaz.Services;
+using Interfaz;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Interfaz.Usuario
 {
     public partial class FinReserva : Form
     {
-        public FinReserva()
+        private readonly IGenericRepository<Pago> _pagoRepository;
+        private readonly IGenericRepository<Reserva> _reservaRepository;
+        private readonly IGenericRepository<Vehiculo> _vehiculoRepository;
+        private readonly IFormNavigation _navigation;
+
+        public FinReserva(
+            IGenericRepository<Pago> pagoRepository,
+            IGenericRepository<Reserva> reservaRepository,
+            IGenericRepository<Vehiculo> vehiculoRepository,
+            IFormNavigation navigation)
         {
             InitializeComponent();
+
+            _pagoRepository = pagoRepository;
+            _reservaRepository = reservaRepository;
+            _vehiculoRepository = vehiculoRepository;
+            _navigation = navigation;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -28,91 +39,99 @@ namespace Interfaz.Usuario
 
         }
 
+        // Finalizar reserva y registrar el pago
         private void button1_Click(object sender, EventArgs e)
         {
-            if (
-                string.IsNullOrWhiteSpace(textBox2.Text) ||
+            if (string.IsNullOrWhiteSpace(textBox2.Text) ||
                 string.IsNullOrWhiteSpace(textBox3.Text))
-
             {
                 MessageBox.Show("Todos los campos son obligatorios.");
                 return;
             }
-            GenericRepository<Pago> pagoRepository = new GenericRepository<Pago>();
-            GenericRepository<Reserva> reservaRepository = new GenericRepository<Reserva>();
-            GenericRepository<Vehiculo> vehiculoRepository = new GenericRepository<Vehiculo>();
-            int reservaId = int.Parse(textBox3.Text);
-            foreach (var reserva in reservaRepository.ObtenerTodos())
+
+            if (comboBox1.SelectedItem == null)
             {
-                if (reserva.Id != reservaId)
-                {
-                    MessageBox.Show("Reserva no encontrada.");
-                    break;
-                }
+                MessageBox.Show("Seleccione un método de pago.");
+                return;
             }
-            string metodoPago = comboBox1.SelectedItem.ToString();
-            int moroso = int.Parse(textBox2.Text);
-            foreach (var reserva in reservaRepository.ObtenerTodos())
+
+            if (!int.TryParse(textBox3.Text, out int reservaId))
+            {
+                MessageBox.Show("Ingrese un ID de reserva válido.");
+                return;
+            }
+
+            if (!int.TryParse(textBox2.Text, out int moroso) ||
+                (moroso != 0 && moroso != 1))
+            {
+                MessageBox.Show("Ingrese 1 si es moroso o 0 si no lo es.");
+                return;
+            }
+
+            // Buscar la reserva
+            Reserva reservaEncontrada = null;
+
+            foreach (var reserva in _reservaRepository.ObtenerTodos())
             {
                 if (reserva.Id == reservaId)
                 {
-                    if (moroso == 1)
-                    {
-                        double pagoFinal = reserva.Seña * 0.30 + reserva.Seña;
-                        textBox1.Text = pagoFinal.ToString();
-                        pagoRepository.Agregar(new Pago
-                        {
-                            MetodoPago = metodoPago,
-                            PagoFinal = pagoFinal,
-                            Estado = true
-                        });
-                        foreach (var vehiculo in vehiculoRepository.ObtenerTodos())
-                        {
-                            if (vehiculo.Id == reserva.VehiculoId)
-                            {
-                                vehiculo.Estado = true;
-                                vehiculoRepository.Modificar(vehiculo);
-                            }
-                        }
-                        if (reserva.Estado == true)
-                        {
-                            reserva.Estado = false;
-                            reservaRepository.Modificar(reserva);
-                        }
-                    }
-                    else
-                    {
-                        double pagoFinal = reserva.Seña;
-                        textBox1.Text = pagoFinal.ToString();
-                        pagoRepository.Agregar(new Pago
-                        {
-                            MetodoPago = metodoPago,
-                            PagoFinal = pagoFinal,
-                            Estado = true
-                        });
-                        foreach (var vehiculo in vehiculoRepository.ObtenerTodos())
-                        {
-                            if (vehiculo.Id == reserva.VehiculoId)
-                            {
-                                vehiculo.Estado = true;
-                                vehiculoRepository.Modificar(vehiculo);
-                            }
-                        }
-                        if (reserva.Estado == true)
-                        {
-                            reserva.Estado = false;
-                            reservaRepository.Modificar(reserva);
-                        }
-                    }
-
-                    return;
+                    reservaEncontrada = reserva;
+                    break;
                 }
             }
-            MessageBox.Show("Reserva no encontrada.");
-            listBox1.Items.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
 
+            if (reservaEncontrada == null)
+            {
+                MessageBox.Show("Reserva no encontrada.");
+                return;
+            }
+
+            if (reservaEncontrada.Estado == false)
+            {
+                MessageBox.Show("Esta reserva ya fue finalizada.");
+                return;
+            }
+
+            string metodoPago = comboBox1.SelectedItem.ToString();
+
+            double pagoFinal;
+
+            if (moroso == 1)
+            {
+                pagoFinal = reservaEncontrada.Seña * 0.30
+                            + reservaEncontrada.Seña;
+            }
+            else
+            {
+                pagoFinal = reservaEncontrada.Seña;
+            }
+
+            textBox1.Text = pagoFinal.ToString();
+
+            // Registrar el pago
+            _pagoRepository.Agregar(new Pago
+            {
+                MetodoPago = metodoPago,
+                PagoFinal = pagoFinal + reservaEncontrada.Seña,
+                Estado = true
+            });
+
+            // Liberar el vehículo
+            foreach (var vehiculo in _vehiculoRepository.ObtenerTodos())
+            {
+                if (vehiculo.Id == reservaEncontrada.VehiculoId)
+                {
+                    vehiculo.Estado = true;
+                    _vehiculoRepository.Modificar(vehiculo);
+                    break;
+                }
+            }
+
+            // Cambiar el estado de la reserva
+            reservaEncontrada.Estado = false;
+            _reservaRepository.Modificar(reservaEncontrada);
+
+            MessageBox.Show("Reserva finalizada y pago registrado correctamente.");
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -120,29 +139,27 @@ namespace Interfaz.Usuario
 
         }
 
+        // Mostrar las reservas activas del cliente
         private void button2_Click(object sender, EventArgs e)
         {
-            GenericRepository<Vehiculo> genericRepository = new GenericRepository<Vehiculo>();
-            GenericRepository<Reserva> reservaRepository = new GenericRepository<Reserva>();
-            foreach (var reserva in reservaRepository.ObtenerTodos())
-            {
+            listBox1.Items.Clear();
 
-                if (reserva.ClienteId == SesionActual.ClienteId)
+            foreach (var reserva in _reservaRepository.ObtenerTodos())
+            {
+                if (reserva.ClienteId == SesionActual.ClienteId &&
+                    reserva.Estado == true)
                 {
-                    if (reserva.Estado == true)
+                    foreach (var vehiculo in _vehiculoRepository.ObtenerTodos())
                     {
-                        foreach (var vehiculo in genericRepository.ObtenerTodos())
+                        if (vehiculo.Id == reserva.VehiculoId)
                         {
-                            if (vehiculo.Id == reserva.VehiculoId)
-                            {
-                                listBox1.Items.Add($"Reserva ID: {reserva.Id}, Marca: {vehiculo.Marca}, Placa: {vehiculo.Patente}");
-                            }
+                            listBox1.Items.Add(
+                                $"Reserva ID: {reserva.Id}, Marca: {vehiculo.Marca}, Placa: {vehiculo.Patente}");
+                            break;
                         }
                     }
                 }
-
             }
-
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -155,11 +172,10 @@ namespace Interfaz.Usuario
 
         }
 
+        // Volver al menú del cliente
         private void button3_Click(object sender, EventArgs e)
         {
-            MenuCliente menuCliente = new MenuCliente();
-            menuCliente.Show();
-            this.Hide();
+            _navigation.Mostrar<MenuCliente>(this);
         }
     }
 }
